@@ -4,168 +4,160 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Pooja Yadav | Android & Flutter Developer</title>
-<meta name="description" content="Portfolio of Pooja Yadav, Android & Flutter Developer specializing in BLE, printers, and image processing.">
+<title>Pooja Yadav | Android Developer</title>
+<meta name="description" content="Android Developer portfolio showcasing live apps, skills, and experience.">
 
+<!-- Tailwind -->
 <script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- Font -->
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
-body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
-
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  scroll-behavior: smooth;
+}
 .glass {
-  background: rgba(255,255,255,0.03);
+  background: rgba(255,255,255,0.05);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255,255,255,0.1);
 }
-
-.hero-gradient {
-  background: radial-gradient(circle at 20% 30%, #1e1b4b 0%, #020617 100%);
-}
-
-.text-gradient {
-  background: linear-gradient(to right, #6366f1, #a855f7);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 .card-hover:hover {
-  transform: translateY(-8px);
-  border-color: rgba(99,102,241,.4);
-}
-
-/* ✅ APP ICON STYLE (FROM CODE 1) */
-.app-icon-container {
-  width: 70px;
-  height: 70px;
-  border-radius: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background: #1e293b;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 10px 15px -3px rgba(0,0,0,.3);
-  border: 1px solid rgba(255,255,255,.1);
-}
-.app-icon-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  transform: translateY(-6px);
 }
 </style>
 </head>
 
-<body class="bg-[#020617] text-slate-200">
+<body class="bg-slate-950 text-slate-200">
 
 <!-- NAVBAR -->
 <nav class="fixed w-full z-50 glass">
   <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between">
-    <span class="text-xl font-bold text-gradient">POOJA.YADAV</span>
+    <span class="font-bold text-indigo-400">POOJA YADAV</span>
+    <div class="space-x-6 text-sm">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#apps">Apps</a>
+      <a href="#contact">Contact</a>
+    </div>
   </div>
 </nav>
 
 <!-- HERO -->
-<section class="min-h-screen flex items-center justify-center hero-gradient px-6 pt-20">
-  <div class="text-center max-w-4xl">
-    <h1 class="text-5xl md:text-7xl font-extrabold mb-6">
-      Android Developer<br><span class="text-gradient">& Flutter Specialist</span>
+<section class="min-h-screen flex items-center justify-center px-6 pt-24 text-center">
+  <div class="max-w-3xl">
+    <h1 class="text-5xl md:text-6xl font-bold mb-6">
+      Android Developer
     </h1>
-    <p class="text-slate-400 max-w-3xl mx-auto">
-      Building hardware-integrated mobile apps for HP, Kodak & Polaroid.
+    <p class="text-slate-400">
+      Building real-world Android apps with Bluetooth printers, image processing,
+      and smooth user experiences.
     </p>
   </div>
 </section>
 
-<!-- ✅ LIVE APPS SECTION (FROM CODE 1) -->
-<section id="projects" class="py-24 px-6 bg-slate-900/20">
-<div class="max-w-7xl mx-auto">
-
-<h2 class="text-3xl font-bold mb-16 text-center">
-Live Apps <span class="text-indigo-400">on Google Play</span>
-</h2>
-
-<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-
-<a href="https://play.google.com/store/apps/details?id=com.hp.impulse.sprocket" target="_blank"
-class="glass p-6 rounded-[2rem] card-hover transition">
-<div class="app-icon-container">
-<img src="https://play-lh.googleusercontent.com/6U6lCidr_kL7XbW7C2YV-D7S6Kz2_EisE9fR4s3rR6zL4i7L9H0F4n-U6p-7R_Q9A=w240-h480-rw">
-</div>
-<h3 class="font-bold">HP Sprocket</h3>
-<p class="text-xs text-slate-500">BLE printing & image editing</p>
-</a>
-
-<a href="https://play.google.com/store/apps/details?id=com.kodaksmile" target="_blank"
-class="glass p-6 rounded-[2rem] card-hover transition">
-<div class="app-icon-container">
-<img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Kodak_logo.svg">
-</div>
-<h3 class="font-bold">Kodak Smile</h3>
-<p class="text-xs text-slate-500">Camera sync & sharing</p>
-</a>
-
-<a href="https://play.google.com/store/apps/details?id=com.kodakclassic" target="_blank"
-class="glass p-6 rounded-[2rem] card-hover transition">
-<div class="app-icon-container">
-<img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Kodak_logo.svg">
-</div>
-<h3 class="font-bold">Kodak Classic</h3>
-<p class="text-xs text-slate-500">Legacy printer support</p>
-</a>
-
-<a href="https://play.google.com/store/apps/details?id=com.kodak.steptouch" target="_blank"
-class="glass p-6 rounded-[2rem] card-hover transition">
-<div class="app-icon-container">
-<img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Kodak_logo.svg">
-</div>
-<h3 class="font-bold">Kodak Step Touch</h3>
-<p class="text-xs text-slate-500">Touch camera printing</p>
-</a>
-
-<a href="https://play.google.com/store/apps/details?id=com.polaroidmint" target="_blank"
-class="glass p-6 rounded-[2rem] card-hover transition">
-<div class="app-icon-container">
-<img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Polaroid_logo.svg">
-</div>
-<h3 class="font-bold">Polaroid Mint</h3>
-<p class="text-xs text-slate-500">Pocket printer app</p>
-</a>
-
-<a href="https://play.google.com/store/apps/details?id=com.polaroid.printerzips" target="_blank"
-class="glass p-6 rounded-[2rem] card-hover transition">
-<div class="app-icon-container">
-<img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Polaroid_logo.svg">
-</div>
-<h3 class="font-bold">Polaroid ZIP</h3>
-<p class="text-xs text-slate-500">ZIP printer support</p>
-</a>
-
-<a href="https://play.google.com/store/apps/details?id=com.polaroid.universalapp" target="_blank"
-class="glass p-6 rounded-[2rem] card-hover transition">
-<div class="app-icon-container">
-<img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Polaroid_logo.svg">
-</div>
-<h3 class="font-bold">Polaroid Universal</h3>
-<p class="text-xs text-slate-500">Multi-device printer app</p>
-</a>
-
-<a href="https://play.google.com/store/apps/details?id=com.hp.photobooth" target="_blank"
-class="glass p-6 rounded-[2rem] card-hover transition">
-<div class="app-icon-container">
-<img src="https://www.hp.com/content/dam/sites/worldwide/homepage/images/HP_Logo_600x600.png">
-</div>
-<h3 class="font-bold">HP Photo Booth</h3>
-<p class="text-xs text-slate-500">Enterprise photo system</p>
-</a>
-
-</div>
-</div>
+<!-- ABOUT -->
+<section id="about" class="py-20 px-6 bg-slate-900/30">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-3xl font-bold mb-6 text-indigo-400">About Me</h2>
+    <p class="text-slate-300 leading-relaxed">
+      I am an Android Developer with hands-on experience in building and maintaining
+      production-level applications used by thousands of users. I specialize in
+      Bluetooth & Wi-Fi printer integration, image editing, Camera APIs, and
+      performance optimization. I enjoy solving complex problems and continuously
+      learning new technologies.
+    </p>
+  </div>
 </section>
 
-<footer class="py-10 text-center text-xs text-slate-600">
-© 2026 Pooja Yadav
+<!-- SKILLS -->
+<section id="skills" class="py-20 px-6">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl font-bold mb-10 text-indigo-400">Skills</h2>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="glass p-6 rounded-xl">
+        <h3 class="font-semibold mb-2">Android</h3>
+        <p class="text-sm text-slate-400">
+          Kotlin, Java, Jetpack, MVVM, CameraX, Bluetooth, Wi-Fi, Printing SDKs
+        </p>
+      </div>
+
+      <div class="glass p-6 rounded-xl">
+        <h3 class="font-semibold mb-2">Frameworks & Tools</h3>
+        <p class="text-sm text-slate-400">
+          Firebase, REST APIs, Picasso, Glide, Git, Android Studio
+        </p>
+      </div>
+
+      <div class="glass p-6 rounded-xl">
+        <h3 class="font-semibold mb-2">Other</h3>
+        <p class="text-sm text-slate-400">
+          Performance Optimization, Debugging, UI/UX, Agile Development
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIVE APPS -->
+<section id="apps" class="py-20 px-6 bg-slate-900/30">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-3xl font-bold mb-12 text-indigo-400 text-center">
+      Live Apps on Google Play
+    </h2>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+      <!-- APP CARD -->
+      <a href="#" class="glass p-6 rounded-2xl card-hover transition">
+        <img src="hp.webp" class="w-14 h-14 mb-4 rounded-xl object-contain" alt="">
+        <h3 class="font-semibold">HP Sprocket</h3>
+        <p class="text-xs text-slate-400">Bluetooth photo printer app</p>
+      </a>
+
+      <a href="#" class="glass p-6 rounded-2xl card-hover transition">
+        <img src="kodak.webp" class="w-14 h-14 mb-4 rounded-xl object-contain" alt="">
+        <h3 class="font-semibold">Kodak Smile</h3>
+        <p class="text-xs text-slate-400">Camera & printer integration</p>
+      </a>
+
+      <a href="#" class="glass p-6 rounded-2xl card-hover transition">
+        <img src="polaroid.webp" class="w-14 h-14 mb-4 rounded-xl object-contain" alt="">
+        <h3 class="font-semibold">Polaroid Mint</h3>
+        <p class="text-xs text-slate-400">Pocket printer app</p>
+      </a>
+
+      <a href="#" class="glass p-6 rounded-2xl card-hover transition">
+        <img src="hp.webp" class="w-14 h-14 mb-4 rounded-xl object-contain" alt="">
+        <h3 class="font-semibold">HP Photo Booth</h3>
+        <p class="text-xs text-slate-400">Event photo printing system</p>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-20 px-6">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-6 text-indigo-400">Contact</h2>
+    <p class="text-slate-400 mb-6">
+      Let’s connect! Feel free to reach out for opportunities or collaboration.
+    </p>
+
+    <div class="space-x-6">
+      <a href="mailto:your@email.com" class="underline">Email</a>
+      <a href="https://github.com/" target="_blank" class="underline">GitHub</a>
+      <a href="https://linkedin.com/" target="_blank" class="underline">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-6 text-center text-xs text-slate-500">
+  © 2026 Pooja Yadav · Android Developer
 </footer>
 
 </body>
