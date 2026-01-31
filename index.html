@@ -1,204 +1,322 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Pooja Yadav | Android & Flutter Developer</title>
+    <meta name="description" content="Portfolio of Pooja Yadav, an Android and Flutter Developer specializing in hardware integration, BLE, and mobile ecosystems.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .hero-gradient { background: radial-gradient(circle at 20% 30%, #1e1b4b 0%, #020617 100%); }
+        .text-gradient { background: linear-gradient(to right, #6366f1, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .card-hover:hover { transform: translateY(-5px); border-color: rgba(99, 102, 241, 0.4); }
+        
+        @keyframes pulse-indigo {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4); }
+            50% { box-shadow: 0 0 0 15px rgba(99, 102, 241, 0); }
+        }
+        .ai-pulse { animation: pulse-indigo 2s infinite; }
 
-<!-- SEO -->
-<title>Pooja Yadav | Android & Flutter Engineer</title>
-<meta name="description" content="Android & Flutter Developer specializing in BLE, printing systems, and image processing for global brands like HP, Kodak, and Polaroid.">
-<meta name="keywords" content="Android Developer, Flutter Developer, BLE Android, Kotlin Developer, Mobile Printing Apps">
-<meta property="og:title" content="Pooja Yadav | Android & Flutter Engineer">
-<meta property="og:description" content="Android & Flutter Developer specializing in BLE, printers, and image processing.">
-
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
-body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
-.glass { background: rgba(255,255,255,0.04); backdrop-filter: blur(14px); border: 1px solid rgba(255,255,255,0.08); }
-.hero-gradient { background: radial-gradient(circle at 20% 30%, #1e1b4b 0%, #020617 100%); }
-.text-gradient { background: linear-gradient(to right,#6366f1,#a855f7); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
-.card-hover:hover { transform: translateY(-6px); border-color: rgba(99,102,241,.4); }
-.ai-pulse { animation: pulse 2s infinite; }
-@keyframes pulse {
-0%,100%{box-shadow:0 0 0 0 rgba(99,102,241,.4)}
-50%{box-shadow:0 0 0 18px rgba(99,102,241,0)}
-}
-</style>
+        @media print {
+            nav, .hero-gradient, #projects, #contact, #ai-assistant, footer { display: none !important; }
+            body { background: white !important; color: black !important; }
+            #experience, #skills { display: block !important; width: 100% !important; padding: 0 !important; }
+            .glass { background: transparent !important; border: none !important; color: black !important; }
+        }
+    </style>
 </head>
-
 <body class="bg-[#020617] text-slate-200">
 
-<!-- NAVBAR -->
-<nav class="fixed w-full z-50 glass">
-  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-    <span class="text-xl font-bold text-gradient">POOJA.YADAV</span>
-    <div class="space-x-6 hidden md:flex text-sm">
-      <a href="#home" class="hover:text-indigo-400">Home</a>
-      <a href="#experience" class="hover:text-indigo-400">Experience</a>
-      <a href="#projects" class="hover:text-indigo-400">Apps</a>
-      <a href="#skills" class="hover:text-indigo-400">Skills</a>
-      <a onclick="window.print()" class="border border-indigo-400 px-4 py-1 rounded-full text-indigo-400 cursor-pointer">Resume</a>
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <span class="text-xl font-bold tracking-tighter text-gradient">POOJA.YADAV</span>
+            <div class="space-x-8 hidden md:flex text-sm font-medium">
+                <a href="#home" class="hover:text-indigo-400 transition">Home</a>
+                <a href="#experience" class="hover:text-indigo-400 transition">Experience</a>
+                <a href="#projects" class="hover:text-indigo-400 transition">Apps</a>
+                <a href="#skills" class="hover:text-indigo-400 transition">Skills</a>
+                <a href="javascript:void(0)" onclick="downloadResume()" class="text-indigo-400 border border-indigo-400/30 px-4 py-1 rounded-full hover:bg-indigo-400/10 transition">Resume</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center hero-gradient px-6 pt-20">
+        <div class="max-w-5xl text-center">
+            <div class="mb-8 inline-block relative">
+                <div class="absolute inset-0 bg-indigo-500 blur-2xl opacity-20 rounded-full"></div>
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&h=200&auto=format&fit=crop" 
+                     alt="Pooja Yadav" class="w-32 h-32 rounded-full object-cover border-2 border-indigo-500/50 relative z-10">
+            </div>
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">Android Developer <br><span class="text-gradient">& Flutter Specialist</span></h1>
+            <p class="text-lg md:text-xl text-slate-400 mb-10 max-w-3xl mx-auto leading-relaxed">
+                Engineering mobile experiences at <span class="text-white font-semibold">C+A Global India</span>. 
+                Focusing on hardware-integrated applications for <span class="text-indigo-400">Kodak, HP, and Polaroid</span>. 
+                Expert in BLE protocols, high-performance image processing, and modern UI architectures.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="downloadResume()" class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 rounded-full font-bold transition flex items-center justify-center gap-2 shadow-xl shadow-indigo-500/20">
+                    <i class="fa-solid fa-file-arrow-down"></i> Download Resume
+                </button>
+                <button onclick="toggleAiAssistant()" class="ai-pulse glass border-indigo-500/50 text-white px-8 py-4 rounded-full font-bold transition flex items-center justify-center gap-2">
+                    ✨ Ask AI about my journey
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section id="experience" class="py-24 px-6 max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold mb-16"><i class="fa-solid fa-briefcase text-indigo-500 mr-3"></i>Professional <span class="text-indigo-400">Journey</span></h2>
+        <div class="space-y-12">
+            
+            <!-- Flutter Role -->
+            <div class="relative pl-8 border-l-2 border-purple-500/30">
+                <div class="absolute -left-[9px] top-0 w-4 h-4 bg-purple-500 rounded-full border-4 border-[#020617]"></div>
+                <div class="flex flex-wrap justify-between items-start mb-2">
+                    <h3 class="text-xl font-bold">Flutter Developer | C+A Global India</h3>
+                    <span class="text-sm bg-purple-500/10 text-purple-400 px-3 py-1 rounded-full">Sep 2025 - Present</span>
+                </div>
+                <p class="text-slate-400 mb-3 italic">Scaling cross-platform solutions</p>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Spearheading the transition of legacy components to Flutter for unified cross-platform performance. Designing responsive custom UI components and implementing state management patterns (Provider/Bloc) to ensure a consistent experience across iOS and Android devices.
+                </p>
+            </div>
+
+            <!-- Android Developer Role -->
+            <div class="relative pl-8 border-l-2 border-indigo-500/30">
+                <div class="absolute -left-[9px] top-0 w-4 h-4 bg-indigo-500 rounded-full border-4 border-[#020617]"></div>
+                <div class="flex flex-wrap justify-between items-start mb-2">
+                    <h3 class="text-xl font-bold">Android Developer | C+A Global India</h3>
+                    <span class="text-sm bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full">Jan 2024 - Present</span>
+                </div>
+                <p class="text-slate-400 mb-3 italic">Hardware & BLE Integration Specialist</p>
+                <p class="text-slate-400 text-sm leading-relaxed mb-2">
+                    Responsible for the core development and maintenance of 8 flagship applications. Key focus on:
+                </p>
+                <ul class="text-slate-400 text-xs space-y-1 list-disc ml-5 mb-4">
+                    <li>Implementing Bluetooth Low Energy (BLE) communication for Kodak and Polaroid printers.</li>
+                    <li>Developing high-performance image editing modules (Filters, Stickers, Cropping).</li>
+                    <li>Optimizing app stability and reducing crash rates using MVVM and Coroutines.</li>
+                </ul>
+            </div>
+
+            <!-- Internship -->
+            <div class="relative pl-8 border-l-2 border-slate-500/30">
+                <div class="absolute -left-[9px] top-0 w-4 h-4 bg-slate-500 rounded-full border-4 border-[#020617]"></div>
+                <div class="flex flex-wrap justify-between items-start mb-2">
+                    <h3 class="text-xl font-bold">Android Intern | ThinkNEXT Technologies</h3>
+                    <span class="text-sm bg-slate-500/10 text-slate-400 px-3 py-1 rounded-full">Jul 2023 - Dec 2023</span>
+                </div>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Gained hands-on experience in the Android ecosystem. Developed fundamental UI components using Material Design 3, integrated REST APIs with Retrofit, and managed local data persistence using SQLite and Shared Preferences.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8 Applications Section -->
+    <section id="projects" class="py-24 px-6 bg-slate-900/20">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold mb-16 text-center">Managed <span class="text-indigo-400">Global Ecosystems</span></h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- App 1: HP Sprocket -->
+                <a href="https://play.google.com/store/apps/details?id=com.hp.sprocket" target="_blank" class="glass p-6 rounded-3xl card-hover transition group">
+                    <div class="w-12 h-12 bg-[#0096D6] rounded-xl mb-6 flex items-center justify-center overflow-hidden text-white shadow-lg">
+                        <i class="fa-brands fa-hp text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold mb-2 group-hover:text-indigo-400">HP Sprocket</h3>
+                    <p class="text-xs text-slate-500">Premium editing and BLE printing integration.</p>
+                </a>
+
+                <!-- App 2: Kodak Step -->
+                <a href="https://play.google.com/store/apps/details?id=com.kodak.step" target="_blank" class="glass p-6 rounded-3xl card-hover transition group">
+                    <div class="w-12 h-12 bg-[#FFD700] rounded-xl mb-6 flex items-center justify-center overflow-hidden">
+                        <span class="text-black font-black text-[10px] underline">KODAK</span>
+                    </div>
+                    <h3 class="font-bold mb-2 group-hover:text-indigo-400">Kodak Step Prints</h3>
+                    <p class="text-xs text-slate-500">Instant-print camera companion software.</p>
+                </a>
+
+                <!-- App 3: Kodak Smile -->
+                <a href="https://play.google.com/store/apps/details?id=com.kodak.smile" target="_blank" class="glass p-6 rounded-3xl card-hover transition group">
+                    <div class="w-12 h-12 bg-[#FFD700] rounded-xl mb-6 flex items-center justify-center overflow-hidden">
+                        <span class="text-black font-black text-[10px] underline">KODAK</span>
+                    </div>
+                    <h3 class="font-bold mb-2 group-hover:text-indigo-400">Kodak Smile</h3>
+                    <p class="text-xs text-slate-500">Digital camera sync & social sharing features.</p>
+                </a>
+
+                <!-- App 4: Polaroid Mint -->
+                <a href="https://play.google.com/store/apps/details?id=com.polaroid.mint" target="_blank" class="glass p-6 rounded-3xl card-hover transition group">
+                    <div class="w-12 h-12 bg-white rounded-xl mb-6 flex items-center justify-center overflow-hidden">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Polaroid_logo.svg" alt="Polaroid" class="w-8">
+                    </div>
+                    <h3 class="font-bold mb-2 group-hover:text-indigo-400">Polaroid Mint</h3>
+                    <p class="text-xs text-slate-500">Mobile printing for Mint pocket series.</p>
+                </a>
+
+                <!-- App 5: Polaroid ZIP -->
+                <a href="https://play.google.com/store/apps/details?id=com.polaroid.zip" target="_blank" class="glass p-6 rounded-3xl card-hover transition group">
+                    <div class="w-12 h-12 bg-white rounded-xl mb-6 flex items-center justify-center overflow-hidden">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Polaroid_logo.svg" alt="Polaroid" class="w-8">
+                    </div>
+                    <h3 class="font-bold mb-2 group-hover:text-indigo-400">Polaroid ZIP</h3>
+                    <p class="text-xs text-slate-500">High-stability printing for legacy hardware.</p>
+                </a>
+
+                <!-- App 6: HP Photo Booth -->
+                <a href="https://play.google.com/store/apps/details?id=com.hp.photobooth" target="_blank" class="glass p-6 rounded-3xl card-hover transition group">
+                    <div class="w-12 h-12 bg-[#0096D6] rounded-xl mb-6 flex items-center justify-center overflow-hidden text-white">
+                        <i class="fa-solid fa-camera-retro text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold mb-2 group-hover:text-indigo-400">HP Photo Booth</h3>
+                    <p class="text-xs text-slate-500">Event photography & enterprise solutions.</p>
+                </a>
+
+                <!-- App 7: Polaroid SnapTouch -->
+                <a href="https://play.google.com/store/apps/details?id=com.polaroid.snaptouch" target="_blank" class="glass p-6 rounded-3xl card-hover transition group">
+                    <div class="w-12 h-12 bg-white rounded-xl mb-6 flex items-center justify-center overflow-hidden">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Polaroid_logo.svg" alt="Polaroid" class="w-8">
+                    </div>
+                    <h3 class="font-bold mb-2 group-hover:text-indigo-400">Polaroid SnapTouch</h3>
+                    <p class="text-xs text-slate-500">Bluetooth camera sync & gallery management.</p>
+                </a>
+
+                <!-- App 8: Kodak Classic -->
+                <a href="https://play.google.com/store/apps/details?id=com.kodak.classic" target="_blank" class="glass p-6 rounded-3xl card-hover transition group">
+                    <div class="w-12 h-12 bg-[#FFD700] rounded-xl mb-6 flex items-center justify-center overflow-hidden">
+                        <span class="text-black font-black text-[10px] underline">KODAK</span>
+                    </div>
+                    <h3 class="font-bold mb-2 group-hover:text-indigo-400">Kodak Classic</h3>
+                    <p class="text-xs text-slate-500">Supporting heritage printer architectures.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills & Education -->
+    <section id="skills" class="py-24 px-6 max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-16">
+            <div>
+                <h2 class="text-3xl font-bold mb-8 italic">Technical Toolkit</h2>
+                <div class="flex flex-wrap gap-3">
+                    <span class="bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 px-4 py-2 rounded-xl text-sm font-semibold">Kotlin</span>
+                    <span class="bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 px-4 py-2 rounded-xl text-sm font-semibold">Flutter & Dart</span>
+                    <span class="bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 px-4 py-2 rounded-xl text-sm font-semibold">BLE / Bluetooth API</span>
+                    <span class="bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 px-4 py-2 rounded-xl text-sm font-semibold">MVVM Architecture</span>
+                    <span class="bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 px-4 py-2 rounded-xl text-sm font-semibold">Retrofit</span>
+                    <span class="bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 px-4 py-2 rounded-xl text-sm font-semibold">Java</span>
+                </div>
+            </div>
+            <div>
+                <h2 class="text-3xl font-bold mb-8 italic">Education</h2>
+                <div class="glass p-6 rounded-3xl">
+                    <h3 class="font-bold text-lg">Bachelor of Computer Applications</h3>
+                    <p class="text-indigo-400 text-sm">GNDU (2017 - 2020)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-24 px-6 max-w-4xl mx-auto text-center border-t border-white/5">
+        <h2 class="text-3xl font-bold mb-8">Let's Connect</h2>
+        <div class="flex flex-wrap justify-center gap-6">
+            <a href="mailto:poojaoctober11@gmail.com" class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 rounded-full font-bold transition">Email Pooja</a>
+            <a href="https://linkedin.com/in/pooja-pooja-134005296" target="_blank" class="glass px-8 py-4 rounded-full font-bold transition hover:bg-white/5">LinkedIn</a>
+        </div>
+    </section>
+
+    <!-- AI Overlay -->
+    <div id="ai-assistant" class="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden">
+        <div class="glass w-full max-w-lg rounded-[2.5rem] overflow-hidden shadow-2xl flex flex-col max-h-[70vh]">
+            <div class="p-6 border-b border-white/10 flex justify-between items-center bg-indigo-900/40">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-indigo-500 flex items-center justify-center"><i class="fa-solid fa-robot text-white text-sm"></i></div>
+                    <h3 class="font-bold text-white">Assistant</h3>
+                </div>
+                <button onclick="toggleAiAssistant()" class="text-slate-400 hover:text-white text-2xl">&times;</button>
+            </div>
+            <div id="ai-chat-output" class="p-6 overflow-y-auto space-y-4 text-sm flex-grow">
+                <p class="text-indigo-300">I can tell you about Pooja's Flutter transition in Sep 2025, her Android experience starting in Jan 2024, or her internship at ThinkNEXT.</p>
+            </div>
+            <div class="p-6 bg-black/40">
+                <div class="flex gap-2">
+                    <input type="text" id="ai-input" placeholder="Ask about her journey..." class="flex-grow bg-white/5 border border-white/10 rounded-2xl px-4 py-2 focus:outline-none focus:border-indigo-500 text-white text-sm">
+                    <button onclick="handleCustomAsk()" class="bg-indigo-600 p-2 rounded-2xl"><i class="fa-solid fa-paper-plane px-2"></i></button>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</nav>
 
-<!-- HERO -->
-<section id="home" class="min-h-screen hero-gradient flex items-center justify-center px-6 pt-24">
-<div class="max-w-5xl text-center">
-<img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2" class="w-32 h-32 rounded-full mx-auto border-2 border-indigo-500 mb-8">
-<h1 class="text-5xl md:text-7xl font-extrabold mb-6">
-Android & Flutter Engineer<br>
-<span class="text-gradient text-3xl md:text-4xl">BLE • Printing • Image Processing</span>
-</h1>
+    <footer class="py-10 text-center text-xs text-slate-600 uppercase tracking-widest">
+        &copy; 2026 Pooja Yadav | Android & Flutter Developer
+    </footer>
 
-<p class="text-slate-400 text-lg max-w-3xl mx-auto">
-Building hardware-integrated mobile applications for <span class="text-white font-semibold">HP, Kodak & Polaroid</span>.
-Specialized in Bluetooth communication, high-performance image pipelines, and scalable mobile architecture.
-</p>
+    <script>
+        const apiKey = ""; 
 
-<p class="mt-6 text-sm text-slate-400">
-🚀 8+ Production Apps • Global Brands • Hardware-Driven Systems
-</p>
+        function toggleAiAssistant() {
+            document.getElementById('ai-assistant').classList.toggle('hidden');
+        }
 
-<div class="flex flex-col sm:flex-row gap-4 justify-center mt-10">
-<button onclick="window.print()" class="bg-indigo-600 px-8 py-4 rounded-full font-bold">
-<i class="fa-solid fa-file-arrow-down mr-2"></i>Resume
-</button>
-<button onclick="toggleAi()" class="glass px-8 py-4 rounded-full font-bold ai-pulse">
-✨ Ask AI
-</button>
-</div>
-</div>
-</section>
+        async function askAi(query) {
+            const output = document.getElementById('ai-chat-output');
+            const msg = document.createElement('div');
+            msg.innerHTML = `<p class="text-indigo-400 font-bold">You: ${query}</p><p class="text-slate-400 italic mt-1" id="typing">Consulting records...</p>`;
+            output.appendChild(msg);
+            output.scrollTop = output.scrollHeight;
 
-<!-- SPECIALIZATION -->
-<section class="py-20 px-6 max-w-6xl mx-auto">
-<h2 class="text-3xl font-bold mb-12 text-center">Core <span class="text-indigo-400">Specialization</span></h2>
-<div class="grid md:grid-cols-3 gap-6">
-<div class="glass p-6 rounded-3xl">
-<h3 class="font-bold mb-2">📡 BLE & Hardware</h3>
-<p class="text-sm text-slate-400">Stable BLE communication, device discovery, printer protocols.</p>
-</div>
-<div class="glass p-6 rounded-3xl">
-<h3 class="font-bold mb-2">🖼 Image Processing</h3>
-<p class="text-sm text-slate-400">Filters, cropping, canvas, bitmap optimization.</p>
-</div>
-<div class="glass p-6 rounded-3xl">
-<h3 class="font-bold mb-2">⚡ Performance</h3>
-<p class="text-sm text-slate-400">ANR reduction, memory control, background services.</p>
-</div>
-</div>
-</section>
+            const context = `Pooja Yadav's Journey:
+            1. Flutter Developer at C+A Global India (Sep 2025 - Present): Transitioning legacy apps to Flutter, state management, cross-platform UI.
+            2. Android Developer at C+A Global India (Jan 2024 - Present): Managing 8 major apps (HP Sprocket, Kodak Step/Smile/Classic, Polaroid Mint/ZIP/SnapTouch, HP Photo Booth). Specialist in BLE and image processing.
+            3. Android Intern at ThinkNEXT (Jul 2023 - Dec 2023): UI development and API integration.
+            Education: BCA from GNDU (2017-2020). Contact: poojaoctober11@gmail.com.`;
 
-<!-- EXPERIENCE -->
-<section id="experience" class="py-24 px-6 max-w-6xl mx-auto">
-<h2 class="text-3xl font-bold mb-16">Professional Journey</h2>
+            try {
+                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        contents: [{ parts: [{ text: `Resume Context: ${context}\n\nVisitor Question: ${query}` }] }],
+                        systemInstruction: { parts: [{ text: "Answer questions about Pooja's specific career timeline. Mention her start dates for Flutter (Sep 2025) and Android (Jan 2024) clearly." }] }
+                    })
+                });
+                const data = await response.json();
+                const text = data.candidates[0].content.parts[0].text;
+                document.getElementById('typing')?.remove();
+                const responsePara = document.createElement('p');
+                responsePara.className = "text-slate-200 mt-2 p-3 bg-white/5 rounded-xl border border-white/5";
+                responsePara.innerText = text;
+                msg.appendChild(responsePara);
+                output.scrollTop = output.scrollHeight;
+            } catch (e) {
+                document.getElementById('typing').innerText = "Unable to respond right now.";
+            }
+        }
 
-<div class="space-y-12">
+        function handleCustomAsk() {
+            const input = document.getElementById('ai-input');
+            if (input.value.trim()) { askAi(input.value); input.value = ""; }
+        }
 
-<div class="glass p-6 rounded-3xl">
-<h3 class="text-xl font-bold">Flutter Developer | C+A Global India</h3>
-<span class="text-sm text-purple-400">Sep 2025 – Present</span>
-<ul class="list-disc ml-5 mt-3 text-sm text-slate-400">
-<li>Migrating legacy Android modules to Flutter.</li>
-<li>Building reusable UI components & state management.</li>
-</ul>
-</div>
+        function downloadResume() {
+            window.print();
+        }
 
-<div class="glass p-6 rounded-3xl">
-<h3 class="text-xl font-bold">Android Developer | C+A Global India</h3>
-<span class="text-sm text-indigo-400">Jan 2024 – Present</span>
-<ul class="list-disc ml-5 mt-3 text-sm text-slate-400">
-<li>Maintaining 8 global printing apps.</li>
-<li>BLE integration with 99% connection stability.</li>
-<li>Reduced crashes & ANRs by 35%.</li>
-</ul>
-</div>
-
-<div class="glass p-6 rounded-3xl">
-<h3 class="text-xl font-bold">Android Intern | ThinkNEXT</h3>
-<span class="text-sm text-slate-400">Jul 2023 – Dec 2023</span>
-<p class="text-sm text-slate-400 mt-2">
-Material UI, Retrofit APIs, SQLite, SharedPreferences.
-</p>
-</div>
-
-</div>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects" class="py-24 px-6 bg-slate-900/30">
-<h2 class="text-3xl font-bold text-center mb-16">Production Applications</h2>
-<div class="grid md:grid-cols-4 gap-6 max-w-7xl mx-auto">
-
-<div class="glass p-6 rounded-3xl card-hover">
-<h3 class="font-bold">HP Sprocket</h3>
-<p class="text-xs text-slate-400">BLE Printing • Image Editor</p>
-</div>
-
-<div class="glass p-6 rounded-3xl card-hover">
-<h3 class="font-bold">Kodak Step</h3>
-<p class="text-xs text-slate-400">Camera Sync • Printing</p>
-</div>
-
-<div class="glass p-6 rounded-3xl card-hover">
-<h3 class="font-bold">Polaroid Mint</h3>
-<p class="text-xs text-slate-400">Mobile Printing</p>
-</div>
-
-<div class="glass p-6 rounded-3xl card-hover">
-<h3 class="font-bold">HP Photo Booth</h3>
-<p class="text-xs text-slate-400">Enterprise Photo System</p>
-</div>
-
-</div>
-</section>
-
-<!-- SKILLS -->
-<section id="skills" class="py-24 px-6 max-w-6xl mx-auto">
-<h2 class="text-3xl font-bold mb-12">Skills</h2>
-
-<h3 class="text-indigo-400 mb-3">Mobile</h3>
-<p class="text-sm text-slate-400 mb-6">Android, Kotlin, Java, Flutter, Dart</p>
-
-<h3 class="text-indigo-400 mb-3">Architecture</h3>
-<p class="text-sm text-slate-400 mb-6">MVVM, Clean Architecture, Coroutines</p>
-
-<h3 class="text-indigo-400 mb-3">Hardware</h3>
-<p class="text-sm text-slate-400">BLE, Bluetooth API, Foreground Services</p>
-</section>
-
-<!-- CONTACT -->
-<section class="py-20 text-center border-t border-white/10">
-<h2 class="text-3xl font-bold mb-6">Let’s Connect</h2>
-<a href="mailto:poojaoctober11@gmail.com" class="bg-indigo-600 px-8 py-4 rounded-full font-bold">Email Me</a>
-</section>
-
-<!-- AI ASSISTANT -->
-<div id="ai" class="fixed inset-0 bg-black/80 hidden flex items-center justify-center">
-<div class="glass p-6 rounded-3xl max-w-md w-full">
-<h3 class="font-bold mb-4">Ask AI about Pooja</h3>
-<div class="flex flex-wrap gap-2">
-<button onclick="alert('Worked on 8 printing apps using BLE.')" class="glass px-3 py-1 rounded-full text-xs">BLE</button>
-<button onclick="alert('Android Dev since Jan 2024, Flutter since Sep 2025.')" class="glass px-3 py-1 rounded-full text-xs">Experience</button>
-<button onclick="alert('Strong in hardware-based mobile apps.')" class="glass px-3 py-1 rounded-full text-xs">Why hire?</button>
-</div>
-<button onclick="toggleAi()" class="mt-6 text-indigo-400">Close</button>
-</div>
-</div>
-
-<script>
-function toggleAi(){
-document.getElementById('ai').classList.toggle('hidden')
-}
-</script>
-
-<footer class="py-10 text-center text-xs text-slate-600">
-© 2026 Pooja Yadav — Android & Flutter Engineer
-</footer>
-
+        document.getElementById('ai-input')?.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') handleCustomAsk();
+        });
+    </script>
 </body>
 </html>
