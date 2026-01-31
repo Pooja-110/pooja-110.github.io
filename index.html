@@ -1,121 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pooja Yadav | Android Developer</title>
-    <meta name="description" content="Portfolio of Pooja Yadav, an Android Developer specializing in hardware integration and BLE.">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
-        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
-        .glass { background: rgba(255,255,255,0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); }
-        .hero-gradient { background: radial-gradient(circle at 20% 30%, #1e1b4b 0%, #020617 100%); }
-        .text-gradient { background: linear-gradient(to right, #6366f1, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .card-hover:hover { transform: translateY(-5px); border-color: rgba(99,102,241,0.4); }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pooja | Android Developer</title>
 
-        @keyframes pulse-indigo {
-            0%,100% { box-shadow: 0 0 0 0 rgba(99,102,241,.4); }
-            50% { box-shadow: 0 0 0 15px rgba(99,102,241,0); }
-        }
-        .ai-pulse { animation: pulse-indigo 2s infinite; }
-    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+body { font-family: 'Plus Jakarta Sans', sans-serif; }
+.glass { background: rgba(255,255,255,0.04); backdrop-filter: blur(14px); border: 1px solid rgba(255,255,255,0.1); }
+.hero-gradient { background: radial-gradient(circle at 20% 30%, #1e1b4b 0%, #020617 100%); }
+</style>
 </head>
 
 <body class="bg-[#020617] text-slate-200">
 
-<!-- Navbar -->
+<!-- NAVBAR -->
 <nav class="fixed w-full z-50 glass">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <span></span>
-        <div class="space-x-8 hidden md:flex text-sm font-medium">
-            <a href="#home" class="hover:text-indigo-400">Home</a>
-            <a href="#experience" class="hover:text-indigo-400">Experience</a>
-            <a href="#projects" class="hover:text-indigo-400">Apps</a>
-            <a href="#skills" class="hover:text-indigo-400">Skills</a>
-            <a href="javascript:void(0)" onclick="downloadResume()" class="text-indigo-400 border border-indigo-400/30 px-4 py-1 rounded-full">Resume</a>
-        </div>
-    </div>
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-end gap-8 text-sm font-semibold">
+    <a href="#home" class="hover:text-indigo-400">Home</a>
+    <a href="#skills" class="hover:text-indigo-400">Skills</a>
+    <a href="#experience" class="hover:text-indigo-400">Experience</a>
+    <a href="#apps" class="hover:text-indigo-400">Apps</a>
+  </div>
 </nav>
 
-<!-- Hero -->
-<section id="home" class="min-h-screen flex items-center justify-center hero-gradient px-6 pt-20">
-    <div class="max-w-5xl text-center">
+<!-- HERO -->
+<section id="home" class="min-h-screen flex items-center justify-center hero-gradient pt-20 px-6">
+  <div class="text-center max-w-4xl">
 
-        <!-- Name Avatar -->
-        <div class="mb-8 inline-flex items-center justify-center w-32 h-32 rounded-full border-2 border-indigo-500/50 text-2xl font-bold text-gradient">
-            Pooja Yadav
-        </div>
+    <!-- NAME -->
+    <h1 class="text-5xl md:text-7xl font-extrabold mb-2">
+      POOJA
+    </h1>
 
-        <h1 class="text-5xl md:text-7xl font-extrabold mb-6">Android Developer</h1>
+    <!-- TITLE -->
+    <h2 class="text-4xl md:text-6xl font-extrabold text-indigo-400 mb-6">
+      Android Developer
+    </h2>
 
-        <p class="text-lg text-slate-400 mb-10 max-w-3xl mx-auto">
-            Engineering mobile experiences at <span class="text-white font-semibold">C+A Global India</span>.
-            Working on hardware-integrated apps for <span class="text-indigo-400">Kodak, HP, and Polaroid</span>.
-        </p>
+    <p class="text-slate-400 mb-8">
+      Mohali, India · 📞 6284557764 · ✉ poojaoctober11@gmail.com
+    </p>
 
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <button onclick="downloadResume()" class="bg-indigo-600 px-8 py-4 rounded-full font-bold">
-                <i class="fa-solid fa-file-arrow-down"></i> Download Resume
-            </button>
-            <button onclick="toggleAiAssistant()" class="ai-pulse glass px-8 py-4 rounded-full font-bold">
-                ✨ Ask AI about my journey
-            </button>
-        </div>
+    <div class="flex flex-wrap gap-4 justify-center">
+      <a href="https://github.com/Pooja-110" target="_blank" class="glass px-6 py-3 rounded-full font-semibold">
+        <i class="fa-brands fa-github"></i> GitHub
+      </a>
+      <a href="https://www.linkedin.com/in/pooja-pooja-134005296" target="_blank" class="glass px-6 py-3 rounded-full font-semibold">
+        <i class="fa-brands fa-linkedin"></i> LinkedIn
+      </a>
+      <button onclick="toggleAI()" class="bg-indigo-600 px-6 py-3 rounded-full font-bold">
+        ✨ Ask AI
+      </button>
     </div>
+  </div>
 </section>
 
-<!-- AI Assistant -->
-<div id="ai-assistant" class="fixed inset-0 z-50 hidden bg-black/80 flex items-center justify-center p-4">
-    <div class="glass w-full max-w-lg rounded-3xl flex flex-col max-h-[70vh]">
-        <div class="p-6 border-b border-white/10 flex justify-between">
-            <h3 class="font-bold">Assistant</h3>
-            <button onclick="toggleAiAssistant()">&times;</button>
-        </div>
-
-        <div id="ai-chat-output" class="p-6 overflow-y-auto text-sm space-y-3 flex-grow">
-            <p class="text-indigo-300">Ask about my Android or Flutter experience.</p>
-        </div>
-
-        <div class="p-6">
-            <div class="flex gap-2">
-                <input id="ai-input" class="flex-grow bg-white/5 px-4 py-2 rounded-xl" placeholder="Ask here...">
-                <button onclick="handleCustomAsk()" class="bg-indigo-600 px-4 rounded-xl">
-                    <i class="fa-solid fa-paper-plane"></i>
-                </button>
-            </div>
-        </div>
+<!-- AI ASSISTANT -->
+<div id="aiBox" class="hidden fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4">
+  <div class="glass w-full max-w-xl rounded-2xl flex flex-col">
+    <div class="p-4 border-b border-white/10 flex justify-between">
+      <h3 class="font-bold">AI Assistant</h3>
+      <button onclick="toggleAI()">✕</button>
     </div>
+
+    <div id="aiOutput" class="p-4 text-sm space-y-3 max-h-[60vh] overflow-y-auto">
+      <p class="text-indigo-300">Ask anything about my profile.</p>
+    </div>
+
+    <div class="p-4 flex gap-2">
+      <input id="aiInput" class="flex-grow px-4 py-2 rounded-lg bg-white/10" placeholder="Type your question">
+      <button onclick="askAI()" class="bg-indigo-600 px-4 rounded-lg">
+        <i class="fa-solid fa-paper-plane"></i>
+      </button>
+    </div>
+  </div>
 </div>
 
 <script>
-function toggleAiAssistant() {
-    document.getElementById('ai-assistant').classList.toggle('hidden');
+function toggleAI() {
+  document.getElementById('aiBox').classList.toggle('hidden');
 }
 
-function handleCustomAsk() {
-    const input = document.getElementById('ai-input');
-    if (!input.value.trim()) return;
+function askAI() {
+  const q = document.getElementById('aiInput').value.toLowerCase();
+  const out = document.getElementById('aiOutput');
 
-    const output = document.getElementById('ai-chat-output');
+  if (!q.trim()) return;
 
-    output.innerHTML += `
-        <p class="text-indigo-400 font-bold">You:</p>
-        <p>${input.value}</p>
-        <p class="text-slate-300 mt-2 bg-white/5 p-3 rounded-xl">
-            I am an Android Developer at C+A Global India (since Jan 2024).  
-            I also have 6 months of Flutter experience focused on UI components and layouts.
-        </p>
-    `;
+  let answer = "";
 
-    output.scrollTop = output.scrollHeight;
-    input.value = "";
-}
+  if (q.includes("summary") || q.includes("about")) {
+    answer = "Android Developer with hands-on experience building production-ready Android applications using Java and Kotlin. Strong expertise in Android SDK, REST APIs, Firebase, Room Database, image processing, and performance optimization. Currently working on live Play Store applications focusing on stability, clean architecture, and user experience.";
+  } 
+  else if (q.includes("skills")) {
+    answer = "Skills include Java, Kotlin, Android SDK, Activities, Fragments, RecyclerView, MVVM, Room Database, REST APIs, Retrofit, Firebase Authentication, XML, Material Design, ConstraintLayout, Git, and GitHub.";
+  } 
+  else if (q.includes("experience") || q.includes("work")) {
+    answer = "Currently working as an Android Developer at C+A Global India since Jan 2024 in Mohali. Responsible for building production apps, integrating APIs, image editing & printing features, Bluetooth & printer workflows, and performance optimization.";
+  }
+  else if (q.includes("flutter")) {
+    answer = "Also contributing as a Flutter Developer at C+A Global India since Sep 2025, focusing on UI and feature development for cross-platform applications.";
+  }
+  else if (q.includes("intern")) {
+    answer = "Completed an Android Developer Internship at ThinkNEXT Technologies (Jul 2023 – Dec 2023), working on Android apps using Java & Kotlin, UI design, API integration, debugging, and lifecycle handling.";
+  }
+  else if (q.includes("apps") || q.includes("play")) {
+    answer = "Key Play Store apps include Polaroid Snap Touch, Polaroid ZIP App, Kodak Step Touch, and HP Photo Booth.";
+  }
+  else if (q.includes("education")) {
+    answer = "Bachelor of Computer Applications from Guru Nanak Dev University (2017–2020). Project: Event Planning Web Application. Academic scores: 12th – 86%, 10th – 76%.";
+  }
+  else if (q.includes("cert")) {
+    answer = "Certified in Android Development Using Java and Android Development Using Kotlin.";
+  }
+  else {
+    answer = "I am an Android Developer with strong production experience in Java, Kotlin, and Android architecture. Ask about skills, experience, apps, education, or certifications.";
+  }
 
-function downloadResume() {
-    window.print();
+  out.innerHTML += `<p class="text-indigo-400 font-bold">You:</p><p>${q}</p>
+                   <p class="bg-white/5 p-3 rounded-xl">${answer}</p>`;
+  out.scrollTop = out.scrollHeight;
+  document.getElementById('aiInput').value = "";
 }
 </script>
 
