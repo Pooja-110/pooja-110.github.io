@@ -16,160 +16,254 @@
         .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
         .hero-gradient { background: radial-gradient(circle at 20% 30%, #1e1b4b 0%, #020617 100%); }
         .text-gradient { background: linear-gradient(to right, #6366f1, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .card-hover:hover { transform: translateY(-5px); border-color: rgba(99, 102, 241, 0.4); }
-
-        @keyframes pulse-indigo {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4); }
-            50% { box-shadow: 0 0 0 15px rgba(99, 102, 241, 0); }
+        .card-hover:hover { transform: translateY(-8px); border-color: rgba(99, 102, 241, 0.4); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
+        
+        .app-icon-container {
+            width: 72px;
+            height: 72px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: #1e293b;
+            margin-bottom: 1.25rem;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
         }
-        .ai-pulse { animation: pulse-indigo 2s infinite; }
+
+        .app-icon-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
         @media print {
-            nav, .hero-gradient, #projects, #contact, #ai-assistant, footer { display: none !important; }
+            nav, .hero-gradient, #projects, #contact, footer { display: none !important; }
             body { background: white !important; color: black !important; }
             #experience, #skills { display: block !important; width: 100% !important; padding: 0 !important; }
-            .glass { background: transparent !important; border: none !important; color: black !important; }
+            .glass { border: 1px solid #eee !important; color: black !important; background: transparent !important; }
         }
     </style>
 </head>
-
 <body class="bg-[#020617] text-slate-200">
 
-<!-- Navbar -->
-<nav class="fixed w-full z-50 glass">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <span class="text-xl font-bold tracking-tighter text-gradient">POOJA.YADAV</span>
-        <div class="space-x-8 hidden md:flex text-sm font-medium">
-            <a href="#home" class="hover:text-indigo-400 transition">Home</a>
-            <a href="#experience" class="hover:text-indigo-400 transition">Experience</a>
-            <a href="#projects" class="hover:text-indigo-400 transition">Apps</a>
-            <a href="#skills" class="hover:text-indigo-400 transition">Skills</a>
-            <a href="javascript:void(0)" onclick="downloadResume()" class="text-indigo-400 border border-indigo-400/30 px-4 py-1 rounded-full hover:bg-indigo-400/10 transition">Resume</a>
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <span class="text-xl font-bold tracking-tighter text-gradient">POOJA.YADAV</span>
+            <div class="space-x-8 hidden md:flex text-sm font-medium">
+                <a href="#home" class="hover:text-indigo-400 transition">Home</a>
+                <a href="#experience" class="hover:text-indigo-400 transition">Experience</a>
+                <a href="#projects" class="hover:text-indigo-400 transition">Apps</a>
+                <a href="#skills" class="hover:text-indigo-400 transition">Skills</a>
+                <a href="javascript:void(0)" onclick="downloadResume()" class="text-indigo-400 border border-indigo-400/30 px-4 py-1 rounded-full hover:bg-indigo-400/10 transition">Resume</a>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
-<!-- Hero Section -->
-<section id="home" class="min-h-screen flex items-center justify-center hero-gradient px-6 pt-20">
-    <div class="max-w-5xl text-center">
-        <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">Android Developer</h1>
-        <p class="text-lg md:text-xl text-slate-400 mb-10 max-w-3xl mx-auto leading-relaxed">
-            Mobile experiences at <span class="text-white font-semibold">C+A Global India</span>.
-            Focusing on hardware-integrated applications for <span class="text-indigo-400">Kodak, HP, and Polaroid</span>.
-            Expert in BLE protocols, high-performance image processing, and modern UI architectures.
-        </p>
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center hero-gradient px-6 pt-20">
+        <div class="max-w-5xl text-center">
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">Android Developer <br><span class="text-gradient">& Flutter Specialist</span></h1>
+            <p class="text-lg md:text-xl text-slate-400 mb-10 max-w-3xl mx-auto leading-relaxed">
+                Engineering mobile experiences at <span class="text-white font-semibold">C+A Global India</span>. 
+                Focusing on hardware-integrated applications for <span class="text-indigo-400">Kodak, HP, and Polaroid</span>. 
+                Expert in BLE protocols, high-performance image processing, and modern UI architectures.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="downloadResume()" class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 rounded-full font-bold transition flex items-center justify-center gap-2 shadow-xl shadow-indigo-500/20">
+                    <i class="fa-solid fa-file-arrow-down"></i> Download Resume
+                </button>
+                <!-- <a href="https://www.linkedin.com/in/pooja-yadav-134005296/" target="_blank" class="glass border-indigo-500/50 text-white px-8 py-4 rounded-full font-bold transition flex items-center justify-center gap-2 hover:bg-white/5">
+                    <i class="fa-brands fa-linkedin text-indigo-400 text-xl"></i> View LinkedIn
+                </a> -->
+                <a href="https://www.linkedin.com/in/pooja-yadav-134005296/"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="ai-pulse glass border-indigo-500/50 text-white px-8 py-4 rounded-full font-bold transition flex items-center justify-center gap-2 hover:bg-white/5">
+   <i class="fa-brands fa-linkedin text-indigo-400 text-xl"></i>
+   View my LinkedIn
+</a>
 
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <button onclick="downloadResume()" class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 rounded-full font-bold transition flex items-center justify-center gap-2 shadow-xl shadow-indigo-500/20">
-                <i class="fa-solid fa-file-arrow-down"></i> Download Resume
-            </button>
+            </div>
+        </div>
+    </section>
 
-            <a href="https://www.linkedin.com/in/pooja-yadav-134005296/"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="ai-pulse glass border-indigo-500/50 text-white px-8 py-4 rounded-full font-bold transition flex items-center justify-center gap-2 hover:bg-white/5">
-                <i class="fa-brands fa-linkedin text-indigo-400 text-xl"></i>
-                View my LinkedIn
+    <!-- Live Apps Section -->
+    <section id="projects" class="py-24 px-6 bg-slate-900/20">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Live Apps</h2>
+                <p class="text-slate-500 uppercase tracking-widest text-xs font-semibold">Google Play Store Contributions</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <!-- HP Sprocket -->
+                <a href="https://play.google.com/store/apps/details?id=com.hp.impulse.sprocket" target="_blank" class="glass p-6 rounded-[2rem] card-hover transition group relative">
+                    <i class="fa-solid fa-arrow-up-right-from-square absolute top-6 right-6 text-xs text-slate-600 group-hover:text-indigo-400"></i>
+                    <div class="app-icon-container">
+                        <img src="https://play-lh.googleusercontent.com/k-db4uB0nXex9r4C2pLj0BkXC_knopvGEmKyrrqpBIob3InfuBBfnFb1xIozWXwxFMc=w240-h240-rw" alt="HP Sprocket Icon">
+                    </div>
+                    <h3 class="font-bold text-lg group-hover:text-indigo-400 transition">HP Sprocket</h3>
+                    <p class="text-xs text-slate-500 mt-2">BLE printing & photo editing suite for HP devices.</p>
+                </a>
+
+                <!-- Kodak Smile -->
+                <a href="https://play.google.com/store/apps/details?id=com.kodaksmile" target="_blank" class="glass p-6 rounded-[2rem] card-hover transition group relative">
+                    <i class="fa-solid fa-arrow-up-right-from-square absolute top-6 right-6 text-xs text-slate-600 group-hover:text-indigo-400"></i>
+                    <div class="app-icon-container">
+                        <img src="https://play-lh.googleusercontent.com/Hzbs4UeorXY47j5OnwuGskg5NASpnqP5sIHKptMXGIApmw5HYIZ03_yaEAzoasUCtQ=w240-h240-rw" alt="Kodak Smile Icon">
+                    </div>
+                    <h3 class="font-bold text-lg group-hover:text-indigo-400 transition">Kodak Smile</h3>
+                    <p class="text-xs text-slate-500 mt-2">Instant camera synchronization and digital sharing.</p>
+                </a>
+
+                <!-- Kodak Classic -->
+                <a href="https://play.google.com/store/apps/details?id=com.kodakclassic" target="_blank" class="glass p-6 rounded-[2rem] card-hover transition group relative">
+                    <i class="fa-solid fa-arrow-up-right-from-square absolute top-6 right-6 text-xs text-slate-600 group-hover:text-indigo-400"></i>
+                    <div class="app-icon-container">
+                        <img src="https://play-lh.googleusercontent.com/-pvWHi62gHsrfRi10qohsWmdx44GSouaJ3ZpNnC2iRARIGBR9HINU86LTdm6_EoUunk=w240-h240-rw" alt="Kodak Classic Icon">
+                    </div>
+                    <h3 class="font-bold text-lg group-hover:text-indigo-400 transition">Kodak Classic</h3>
+                    <p class="text-xs text-slate-500 mt-2">Supporting legacy hardware with modern filters.</p>
+                </a>
+
+                <!-- Kodak Step Touch -->
+                <a href="https://play.google.com/store/apps/details?id=com.kodak.steptouch" target="_blank" class="glass p-6 rounded-[2rem] card-hover transition group relative">
+                    <i class="fa-solid fa-arrow-up-right-from-square absolute top-6 right-6 text-xs text-slate-600 group-hover:text-indigo-400"></i>
+                    <div class="app-icon-container">
+                        <img src="https://play-lh.googleusercontent.com/bo5mCyt5fIH52nF10XaSzJRmFZ_mKuUUqEw205lLNzAFnmx2xbMdUg0793A_NAyzVJeh=w240-h240-rw" alt="Kodak Step Touch Icon">
+                    </div>
+                    <h3 class="font-bold text-lg group-hover:text-indigo-400 transition">Kodak Step Touch</h3>
+                    <p class="text-xs text-slate-500 mt-2">Interactive touchscreen camera printing hub.</p>
+                </a>
+
+                <!-- Polaroid Mint -->
+                <a href="https://play.google.com/store/apps/details?id=com.polaroidmint" target="_blank" class="glass p-6 rounded-[2rem] card-hover transition group relative">
+                    <i class="fa-solid fa-arrow-up-right-from-square absolute top-6 right-6 text-xs text-slate-600 group-hover:text-indigo-400"></i>
+                    <div class="app-icon-container">
+                        <img src="https://play-lh.googleusercontent.com/9B0xnwLlPkeD8nGQQht-Cxs703mhMwg4jFBF6KJFfrxiOXqiUrFFregF7xpvZiSnMQ=w240-h240-rw" alt="Polaroid Mint Icon">
+                    </div>
+                    <h3 class="font-bold text-lg group-hover:text-indigo-400 transition">Polaroid Mint</h3>
+                    <p class="text-xs text-slate-500 mt-2">Vertical printing ecosystem for Polaroid Mint.</p>
+                </a>
+
+                <!-- Polaroid ZIP -->
+                <a href="https://play.google.com/store/apps/details?id=com.polaroid.printerzips" target="_blank" class="glass p-6 rounded-[2rem] card-hover transition group relative">
+                    <i class="fa-solid fa-arrow-up-right-from-square absolute top-6 right-6 text-xs text-slate-600 group-hover:text-indigo-400"></i>
+                    <div class="app-icon-container">
+                        <img src="https://play-lh.googleusercontent.com/9XOI2onKkmf1o3kYBMQQSJp94fC74SCd9sdhaMf9a3qkHFUdZflImV46sUMubI_hrQ=w240-h240-rw" alt="Polaroid ZIP Icon">
+                    </div>
+                    <h3 class="font-bold text-lg group-hover:text-indigo-400 transition">Polaroid ZIP</h3>
+                    <p class="text-xs text-slate-500 mt-2">Managing ZINK technology instant printers.</p>
+                </a>
+
+                <!-- Polaroid Snaptouch -->
+                <a href="https://play.google.com/store/apps/details?id=com.polaroid.universalapp" target="_blank" class="glass p-6 rounded-[2rem] card-hover transition group relative">
+                    <i class="fa-solid fa-arrow-up-right-from-square absolute top-6 right-6 text-xs text-slate-600 group-hover:text-indigo-400"></i>
+                    <div class="app-icon-container">
+                        <img src="https://play-lh.googleusercontent.com/l5rISLRV8cmwAzEshRGscnOhrJZyAONqqp3orQJLrlD3uflY_ySgQOolEUipqUf3OQ=w240-h240-rw" alt="Polaroid Snaptouch Icon">
+                    </div>
+                    <h3 class="font-bold text-lg group-hover:text-indigo-400 transition">Polaroid Snaptouch</h3>
+                    <p class="text-xs text-slate-500 mt-2">Unified support for Polaroid instant devices.</p>
+                </a>
+
+                <!-- HP Photo Booth -->
+                <a href="https://play.google.com/store/apps/details?id=com.hp.photobooth" target="_blank" class="glass p-6 rounded-[2rem] card-hover transition group relative">
+                    <i class="fa-solid fa-arrow-up-right-from-square absolute top-6 right-6 text-xs text-slate-600 group-hover:text-indigo-400"></i>
+                    <div class="app-icon-container">
+                        <img src="https://play-lh.googleusercontent.com/EFaSi_J0tLhnsMn1PSBTSnWK7kROcJa8XrNNH1IlLGAGbOCN0inmeLa-fsxgTVYyp4E=w240-h240-rw" alt="HP Photo Booth Icon">
+                    </div>
+                    <h3 class="font-bold text-lg group-hover:text-indigo-400 transition">HP Photo Booth</h3>
+                    <p class="text-xs text-slate-500 mt-2">Enterprise solution for event-based photography.</p>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section id="experience" class="py-24 px-6 max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold mb-16"><i class="fa-solid fa-briefcase text-indigo-500 mr-3"></i>Professional <span class="text-indigo-400">Journey</span></h2>
+        <div class="space-y-12">
+            <div class="relative pl-8 border-l-2 border-purple-500/30">
+                <div class="absolute -left-[9px] top-0 w-4 h-4 bg-purple-500 rounded-full border-4 border-[#020617]"></div>
+                <div class="flex flex-wrap justify-between items-start mb-2">
+                    <h3 class="text-xl font-bold">Flutter Developer | C+A Global India</h3>
+                    <span class="text-sm bg-purple-500/10 text-purple-400 px-3 py-1 rounded-full">Sep 2025 - Present</span>
+                </div>
+                <p class="text-slate-400 text-sm">Leading cross-platform initiatives and modernizing legacy application architectures using Flutter.</p>
+            </div>
+            
+            <div class="relative pl-8 border-l-2 border-indigo-500/30">
+                <div class="absolute -left-[9px] top-0 w-4 h-4 bg-indigo-500 rounded-full border-4 border-[#020617]"></div>
+                <div class="flex flex-wrap justify-between items-start mb-2">
+                    <h3 class="text-xl font-bold">Android Developer | C+A Global India</h3>
+                    <span class="text-sm bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full">Jan 2024 - Present</span>
+                </div>
+                <p class="text-slate-400 text-sm">Managing the complete lifecycle of 8 flagship applications. Expert in BLE connectivity and high-performance image processing.</p>
+            </div>
+
+            <div class="relative pl-8 border-l-2 border-slate-500/30">
+                <div class="absolute -left-[9px] top-0 w-4 h-4 bg-slate-500 rounded-full border-4 border-[#020617]"></div>
+                <div class="flex flex-wrap justify-between items-start mb-2">
+                    <h3 class="text-xl font-bold">Android Intern | ThinkNEXT Technologies</h3>
+                    <span class="text-sm bg-slate-500/10 text-slate-400 px-3 py-1 rounded-full">Jul 2023 - Dec 2023</span>
+                </div>
+                <p class="text-slate-400 text-sm">Developed foundational skills in Android UI design and REST API integration.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills & Education -->
+    <section id="skills" class="py-24 px-6 max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-16">
+            <div>
+                <h2 class="text-3xl font-bold mb-8">Technical Toolkit</h2>
+                <div class="flex flex-wrap gap-3">
+                    <span class="bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 px-4 py-2 rounded-xl text-sm font-semibold">Kotlin</span>
+                    <span class="bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 px-4 py-2 rounded-xl text-sm font-semibold">Flutter & Dart</span>
+                    <span class="bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 px-4 py-2 rounded-xl text-sm font-semibold">BLE / Bluetooth API</span>
+                    <span class="bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 px-4 py-2 rounded-xl text-sm font-semibold">MVVM Architecture</span>
+                    <span class="bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 px-4 py-2 rounded-xl text-sm font-semibold">Retrofit</span>
+                    <span class="bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 px-4 py-2 rounded-xl text-sm font-semibold">Java</span>
+                    <span class="bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 px-4 py-2 rounded-xl text-sm font-semibold">Room Database</span>
+                </div>
+            </div>
+            <div>
+                <h2 class="text-3xl font-bold mb-8">Education</h2>
+                <div class="glass p-6 rounded-3xl">
+                    <h3 class="font-bold text-lg">Bachelor of Computer Applications</h3>
+                    <p class="text-indigo-400 text-sm mb-2">Guru Nanak Dev University</p>
+                    <p class="text-slate-500 text-xs">Graduated 2020</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-24 px-6 max-w-4xl mx-auto text-center border-t border-white/5">
+        <h2 class="text-3xl font-bold mb-8">Let's Connect</h2>
+        <div class="flex flex-wrap justify-center gap-6">
+            <a href="mailto:poojaoctober11@gmail.com" class="flex items-center gap-3 glass px-8 py-4 rounded-full font-bold transition hover:bg-white/5">
+                <i class="fa-solid fa-envelope text-indigo-400 text-xl"></i> poojaoctober11@gmail.com
+            </a>
+            <a href="https://www.linkedin.com/in/pooja-yadav-134005296/" target="_blank" class="flex items-center gap-3 glass px-8 py-4 rounded-full font-bold transition hover:bg-white/5">
+                <i class="fa-brands fa-linkedin text-indigo-400 text-xl"></i> LinkedIn Profile
             </a>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- LIVE APPS SECTION (ONLY PART MODIFIED) -->
-<section id="projects" class="py-24 px-6 bg-slate-900/20">
-    <div class="max-w-7xl mx-auto">
-        <h2 class="text-3xl font-bold mb-16 text-center">
-            Live Apps <span class="text-indigo-400">on the Google Play Store</span>
-        </h2>
+    <footer class="py-10 text-center text-xs text-slate-600 uppercase tracking-widest">
+        &copy; 2026 Pooja Yadav | Android & Flutter Developer
+    </footer>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-
-            <!-- HP Sprocket -->
-            <a href="https://play.google.com/store/apps/details?id=com.hp.impulse.sprocket" target="_blank"
-               class="glass p-6 rounded-3xl card-hover transition group relative">
-                <i class="fa-solid fa-arrow-up-right-from-square absolute top-4 right-4 text-xs text-slate-500 group-hover:text-indigo-400"></i>
-                <img src="https://play-lh.googleusercontent.com/k-db4uB0nXex9r4C2pLj0BkXC_knopvGEmKyrrqpBIob3InfuBBfnFb1xIozWXwxFMc=w240-h240"
-                     class="w-12 h-12 rounded-xl mb-6">
-                <h3 class="font-bold group-hover:text-indigo-400">HP Sprocket</h3>
-                <p class="text-xs text-slate-500">BLE printing & photo editing</p>
-            </a>
-
-            <!-- Kodak Smile -->
-            <a href="https://play.google.com/store/apps/details?id=com.kodaksmile" target="_blank"
-               class="glass p-6 rounded-3xl card-hover transition group relative">
-                <i class="fa-solid fa-arrow-up-right-from-square absolute top-4 right-4 text-xs text-slate-500 group-hover:text-indigo-400"></i>
-                <img src="https://play-lh.googleusercontent.com/5n6vZbSybGgQm6Y6pX8B3g7lLPfA4p1s4nO2h6qM1Wn6p1=w240-h240"
-                     class="w-12 h-12 rounded-xl mb-6">
-                <h3 class="font-bold group-hover:text-indigo-400">Kodak Smile</h3>
-                <p class="text-xs text-slate-500">Camera sync & sharing</p>
-            </a>
-
-            <!-- Kodak Classic -->
-            <a href="https://play.google.com/store/apps/details?id=com.kodakclassic" target="_blank"
-               class="glass p-6 rounded-3xl card-hover transition group relative">
-                <i class="fa-solid fa-arrow-up-right-from-square absolute top-4 right-4 text-xs text-slate-500 group-hover:text-indigo-400"></i>
-                <img src="https://play-lh.googleusercontent.com/WF8N7u6mUuJQJZTb1k0q1=w240-h240"
-                     class="w-12 h-12 rounded-xl mb-6">
-                <h3 class="font-bold group-hover:text-indigo-400">Kodak Classic</h3>
-                <p class="text-xs text-slate-500">Legacy printer support</p>
-            </a>
-
-            <!-- Kodak Step Touch -->
-            <a href="https://play.google.com/store/apps/details?id=com.kodak.steptouch" target="_blank"
-               class="glass p-6 rounded-3xl card-hover transition group relative">
-                <i class="fa-solid fa-arrow-up-right-from-square absolute top-4 right-4 text-xs text-slate-500 group-hover:text-indigo-400"></i>
-                <img src="https://play-lh.googleusercontent.com/tJm8QH4G=w240-h240"
-                     class="w-12 h-12 rounded-xl mb-6">
-                <h3 class="font-bold group-hover:text-indigo-400">Kodak Step Touch</h3>
-                <p class="text-xs text-slate-500">Touch camera printing</p>
-            </a>
-
-            <!-- Polaroid Mint -->
-            <a href="https://play.google.com/store/apps/details?id=com.polaroidmint" target="_blank"
-               class="glass p-6 rounded-3xl card-hover transition group relative">
-                <i class="fa-solid fa-arrow-up-right-from-square absolute top-4 right-4 text-xs text-slate-500 group-hover:text-indigo-400"></i>
-                <img src="https://play-lh.googleusercontent.com/polaroid=w240-h240"
-                     class="w-12 h-12 rounded-xl mb-6">
-                <h3 class="font-bold group-hover:text-indigo-400">Polaroid Mint</h3>
-                <p class="text-xs text-slate-500">Pocket printer app</p>
-            </a>
-
-            <!-- Polaroid ZIP -->
-            <a href="https://play.google.com/store/apps/details?id=com.polaroid.printerzips" target="_blank"
-               class="glass p-6 rounded-3xl card-hover transition group relative">
-                <i class="fa-solid fa-arrow-up-right-from-square absolute top-4 right-4 text-xs text-slate-500 group-hover:text-indigo-400"></i>
-                <img src="https://play-lh.googleusercontent.com/polaroidzip=w240-h240"
-                     class="w-12 h-12 rounded-xl mb-6">
-                <h3 class="font-bold group-hover:text-indigo-400">Polaroid ZIP</h3>
-                <p class="text-xs text-slate-500">ZIP printer support</p>
-            </a>
-
-            <!-- Polaroid Snaptouch -->
-            <a href="https://play.google.com/store/apps/details?id=com.polaroid.universalapp" target="_blank"
-               class="glass p-6 rounded-3xl card-hover transition group relative">
-                <i class="fa-solid fa-arrow-up-right-from-square absolute top-4 right-4 text-xs text-slate-500 group-hover:text-indigo-400"></i>
-                <img src="https://play-lh.googleusercontent.com/polaroidsnap=w240-h240"
-                     class="w-12 h-12 rounded-xl mb-6">
-                <h3 class="font-bold group-hover:text-indigo-400">Polaroid Snaptouch</h3>
-                <p class="text-xs text-slate-500">Multi-device printer app</p>
-            </a>
-
-            <!-- HP Photo Booth -->
-            <a href="https://play.google.com/store/apps/details?id=com.hp.photobooth" target="_blank"
-               class="glass p-6 rounded-3xl card-hover transition group relative">
-                <i class="fa-solid fa-arrow-up-right-from-square absolute top-4 right-4 text-xs text-slate-500 group-hover:text-indigo-400"></i>
-                <img src="https://play-lh.googleusercontent.com/hpphotobooth=w240-h240"
-                     class="w-12 h-12 rounded-xl mb-6">
-                <h3 class="font-bold group-hover:text-indigo-400">HP Photo Booth</h3>
-                <p class="text-xs text-slate-500">Enterprise photo system</p>
-            </a>
-
-        </div>
-    </div>
-</section>
-
-<!-- EVERYTHING BELOW IS UNCHANGED (AI, SKILLS, CONTACT, JS, FOOTER) -->
-<!-- Your existing code continues exactly the same -->
-
+    <script>
+        function downloadResume() {
+            window.print();
+        }
+    </script>
 </body>
 </html>
