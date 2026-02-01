@@ -1,155 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Pooja Yadav | Android & Flutter Developer</title>
-  <meta name="description"
-        content="Portfolio of Pooja Yadav, Android & Flutter Developer specializing in BLE, printers, and hardware-integrated apps." />
+    <title>Pooja Yadav | Android & Flutter Developer</title>
+    <meta name="description" content="Portfolio of Pooja Yadav, an Android and Flutter Developer specializing in hardware integration, BLE, and mobile ecosystems.">
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .hero-gradient { background: radial-gradient(circle at 20% 30%, #1e1b4b 0%, #020617 100%); }
+        .text-gradient { background: linear-gradient(to right, #6366f1, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .card-hover:hover { transform: translateY(-5px); border-color: rgba(99, 102, 241, 0.4); }
 
-    body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      scroll-behavior: smooth;
-    }
-
-    .glass {
-      background: rgba(255, 255, 255, 0.03);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .hero-gradient {
-      background: radial-gradient(circle at 20% 30%, #1e1b4b 0%, #020617 100%);
-    }
-
-    .text-gradient {
-      background: linear-gradient(to right, #6366f1, #a855f7);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .card-hover:hover {
-      transform: translateY(-5px);
-      border-color: rgba(99, 102, 241, 0.4);
-    }
-
-    @keyframes pulse-indigo {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(99,102,241,.4); }
-      50% { box-shadow: 0 0 0 15px rgba(99,102,241,0); }
-    }
-
-    .ai-pulse {
-      animation: pulse-indigo 2s infinite;
-    }
-  </style>
+        @keyframes pulse-indigo {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4); }
+            50% { box-shadow: 0 0 0 15px rgba(99, 102, 241, 0); }
+        }
+        .ai-pulse { animation: pulse-indigo 2s infinite; }
+    </style>
 </head>
 
 <body class="bg-[#020617] text-slate-200">
 
 <!-- NAVBAR -->
 <nav class="fixed w-full z-50 glass">
-  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-    <span class="text-xl font-bold tracking-tighter text-gradient">POOJA.YADAV</span>
-    <div class="space-x-8 hidden md:flex text-sm font-medium">
-      <a href="#home" class="hover:text-indigo-400">Home</a>
-      <a href="#experience" class="hover:text-indigo-400">Experience</a>
-      <a href="#projects" class="hover:text-indigo-400">Apps</a>
-      <a href="#skills" class="hover:text-indigo-400">Skills</a>
-      <a href="javascript:void(0)"
-         onclick="window.print()"
-         class="text-indigo-400 border border-indigo-400/30 px-4 py-1 rounded-full">
-        Resume
-      </a>
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <span class="text-xl font-bold tracking-tighter text-gradient">POOJA.YADAV</span>
+        <div class="space-x-8 hidden md:flex text-sm font-medium">
+            <a href="#home" class="hover:text-indigo-400 transition">Home</a>
+            <a href="#experience" class="hover:text-indigo-400 transition">Experience</a>
+            <a href="#projects" class="hover:text-indigo-400 transition">Apps</a>
+            <a href="#skills" class="hover:text-indigo-400 transition">Skills</a>
+            <a href="javascript:void(0)" onclick="window.print()"
+               class="text-indigo-400 border border-indigo-400/30 px-4 py-1 rounded-full hover:bg-indigo-400/10 transition">
+                Resume
+            </a>
+        </div>
     </div>
-  </div>
 </nav>
 
 <!-- HERO -->
 <section id="home" class="min-h-screen flex items-center justify-center hero-gradient px-6 pt-20">
-  <div class="max-w-5xl text-center">
-    <h1 class="text-5xl md:text-7xl font-extrabold mb-6">
-      Android Developer
-    </h1>
+    <div class="max-w-5xl text-center">
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">
+            Android Developer
+        </h1>
 
-    <p class="text-lg text-slate-400 mb-10 max-w-3xl mx-auto">
-      Mobile experiences at <b class="text-white">C+A Global India</b>.
-      Working on <span class="text-indigo-400">HP, Kodak & Polaroid</span>
-      printer applications with deep BLE & image processing integration.
-    </p>
+        <p class="text-lg md:text-xl text-slate-400 mb-10 max-w-3xl mx-auto">
+            Mobile experiences at <span class="text-white font-semibold">C+A Global India</span>.
+            Working on <span class="text-indigo-400">HP, Kodak & Polaroid</span> printer ecosystems.
+        </p>
 
-    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <button onclick="window.print()"
-              class="bg-indigo-600 hover:bg-indigo-700 px-8 py-4 rounded-full font-bold shadow-xl">
-        <i class="fa-solid fa-file-arrow-down"></i> Download Resume
-      </button>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <button onclick="window.print()"
+                class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 rounded-full font-bold transition flex items-center gap-2 shadow-xl shadow-indigo-500/20">
+                <i class="fa-solid fa-file-arrow-down"></i> Download Resume
+            </button>
 
-      <a href="https://www.linkedin.com/in/pooja-yadav-134005296/"
-         target="_blank"
-         class="ai-pulse glass px-8 py-4 rounded-full font-bold flex items-center gap-2">
-        <i class="fa-brands fa-linkedin text-indigo-400 text-xl"></i>
-        View my LinkedIn
-      </a>
+            <a href="https://www.linkedin.com/in/pooja-yadav-134005296/"
+               target="_blank"
+               class="ai-pulse glass px-8 py-4 rounded-full font-bold transition flex items-center gap-2 hover:bg-white/5">
+                <i class="fa-brands fa-linkedin text-indigo-400 text-xl"></i>
+                View my LinkedIn
+            </a>
+        </div>
     </div>
-  </div>
 </section>
 
 <!-- LIVE APPS -->
 <section id="projects" class="py-24 px-6 bg-slate-900/20">
-  <div class="max-w-7xl mx-auto">
-    <h2 class="text-3xl font-bold mb-16 text-center">
-      Live Apps <span class="text-indigo-400">on Play Store</span>
-    </h2>
+    <div class="max-w-7xl mx-auto">
+        <h2 class="text-3xl font-bold mb-16 text-center">
+            Live Apps <span class="text-indigo-400">on the Google Play Store</span>
+        </h2>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
 
-      <!-- APP CARD TEMPLATE -->
-      <!-- Repeat structure only URL + name changes -->
+            <!-- APP CARD TEMPLATE USED FOR ALL 8 -->
+            <!-- Each card has a click indicator icon -->
 
-      <a href="#" target="_blank"
-         class="glass p-6 rounded-3xl card-hover group relative">
+            <a href="#" target="_blank" class="glass p-6 rounded-3xl card-hover transition group relative">
+                <i class="fa-solid fa-arrow-up-right-from-square absolute top-4 right-4 text-xs text-slate-500 group-hover:text-indigo-400"></i>
+                <img src="https://play-lh.googleusercontent.com/k-db4uB0nXex9r4C2pLj0BkXC_knopvGEmKyrrqpBIob3InfuBBfnFb1xIozWXwxFMc=w480-h960-rw"
+                     class="w-12 h-12 rounded-xl mb-6 object-cover">
+                <h3 class="font-bold group-hover:text-indigo-400">HP Sprocket</h3>
+                <p class="text-xs text-slate-500">BLE printing & photo editing</p>
+            </a>
 
-        <!-- click indicator -->
-        <i class="fa-solid fa-arrow-up-right-from-square
-                  absolute top-4 right-4 text-slate-500 text-xs
-                  group-hover:text-indigo-400"></i>
+            <a href="#" target="_blank" class="glass p-6 rounded-3xl card-hover transition group relative">
+                <i class="fa-solid fa-arrow-up-right-from-square absolute top-4 right-4 text-xs text-slate-500 group-hover:text-indigo-400"></i>
+                <img src="https://play-lh.googleusercontent.com/Hzbs4UeorXY47j5OnwuGskg5NASpnqP5sIHKptMXGIApmw5HYIZ03_yaEAzoasUCtQ=w480-h960-rw"
+                     class="w-12 h-12 rounded-xl mb-6 object-cover">
+                <h3 class="font-bold group-hover:text-indigo-400">Kodak Smile</h3>
+                <p class="text-xs text-slate-500">Camera sync & sharing</p>
+            </a>
 
-        <div class="w-12 h-12 rounded-xl mb-6 overflow-hidden bg-black">
-          <img src="https://play-lh.googleusercontent.com/k-db4uB0nXex9r4C2pLj0BkXC_knopvGEmKyrrqpBIob3InfuBBfnFb1xIozWXwxFMc=w480-h960-rw"
-               class="w-full h-full object-cover" />
+            <a href="#" target="_blank" class="glass p-6 rounded-3xl card-hover transition group relative">
+                <i class="fa-solid fa-arrow-up-right-from-square absolute top-4 right-4 text-xs text-slate-500 group-hover:text-indigo-400"></i>
+                <img src="https://play-lh.googleusercontent.com/-pvWHi62gHsrfRi10qohsWmdx44GSouaJ3ZpNnC2iRARIGBR9HINU86LTdm6_EoUunk=w480-h960-rw"
+                     class="w-12 h-12 rounded-xl mb-6 object-cover">
+                <h3 class="font-bold group-hover:text-indigo-400">Kodak Classic</h3>
+                <p class="text-xs text-slate-500">Legacy printer support</p>
+            </a>
+
+            <a href="#" target="_blank" class="glass p-6 rounded-3xl card-hover transition group relative">
+                <i class="fa-solid fa-arrow-up-right-from-square absolute top-4 right-4 text-xs text-slate-500 group-hover:text-indigo-400"></i>
+                <img src="https://play-lh.googleusercontent.com/bo5mCyt5fIH52nF10XaSzJRmFZ_mKuUUqEw205lLNzAFnmx2xbMdUg0793A_NAyzVJeh=w480-h960-rw"
+                     class="w-12 h-12 rounded-xl mb-6 object-cover">
+                <h3 class="font-bold group-hover:text-indigo-400">Kodak Step Touch</h3>
+                <p class="text-xs text-slate-500">Touch camera printing</p>
+            </a>
+
+            <a href="#" target="_blank" class="glass p-6 rounded-3xl card-hover transition group relative">
+                <i class="fa-solid fa-arrow-up-right-from-square absolute top-4 right-4 text-xs text-slate-500 group-hover:text-indigo-400"></i>
+                <img src="https://play-lh.googleusercontent.com/9B0xnwLlPkeD8nGQQht-Cxs703mhMwg4jFBF6KJFfrxiOXqiUrFFregF7xpvZiSnMQ=w480-h960-rw"
+                     class="w-12 h-12 rounded-xl mb-6 object-cover">
+                <h3 class="font-bold group-hover:text-indigo-400">Polaroid Mint</h3>
+                <p class="text-xs text-slate-500">Pocket printer app</p>
+            </a>
+
+            <a href="#" target="_blank" class="glass p-6 rounded-3xl card-hover transition group relative">
+                <i class="fa-solid fa-arrow-up-right-from-square absolute top-4 right-4 text-xs text-slate-500 group-hover:text-indigo-400"></i>
+                <img src="https://play-lh.googleusercontent.com/9XOI2onKkmf1o3kYBMQQSJp94fC74SCd9sdhaMf9a3qkHFUdZflImV46sUMubI_hrQ=w480-h960-rw"
+                     class="w-12 h-12 rounded-xl mb-6 object-cover">
+                <h3 class="font-bold group-hover:text-indigo-400">Polaroid ZIP</h3>
+                <p class="text-xs text-slate-500">ZIP printer support</p>
+            </a>
+
+            <a href="#" target="_blank" class="glass p-6 rounded-3xl card-hover transition group relative">
+                <i class="fa-solid fa-arrow-up-right-from-square absolute top-4 right-4 text-xs text-slate-500 group-hover:text-indigo-400"></i>
+                <img src="https://play-lh.googleusercontent.com/l5rISLRV8cmwAzEshRGscnOhrJZyAONqqp3orQJLrlD3uflY_ySgQOolEUipqUf3OQ=w480-h960-rw"
+                     class="w-12 h-12 rounded-xl mb-6 object-cover">
+                <h3 class="font-bold group-hover:text-indigo-400">Polaroid Snaptouch</h3>
+                <p class="text-xs text-slate-500">Multi-device printer app</p>
+            </a>
+
+            <a href="#" target="_blank" class="glass p-6 rounded-3xl card-hover transition group relative">
+                <i class="fa-solid fa-arrow-up-right-from-square absolute top-4 right-4 text-xs text-slate-500 group-hover:text-indigo-400"></i>
+                <img src="https://play-lh.googleusercontent.com/EFaSi_J0tLhnsMn1PSBTSnWK7kROcJa8XrNNH1IlLGAGbOCN0inmeLa-fsxgTVYyp4E=w480-h960-rw"
+                     class="w-12 h-12 rounded-xl mb-6 object-cover">
+                <h3 class="font-bold group-hover:text-indigo-400">HP Photo Booth</h3>
+                <p class="text-xs text-slate-500">Enterprise photo system</p>
+            </a>
+
         </div>
-
-        <h3 class="font-bold group-hover:text-indigo-400">HP Sprocket</h3>
-        <p class="text-xs text-slate-500">BLE printing & editing</p>
-      </a>
-
-      <!-- Repeat cards with your remaining 7 image URLs -->
-      <!-- Just replace img src -->
-
     </div>
-  </div>
 </section>
 
-<!-- SKILLS -->
-<section id="skills" class="py-24 px-6 max-w-6xl mx-auto">
-  <h2 class="text-3xl font-bold mb-8">Technical Toolkit</h2>
-  <div class="flex flex-wrap gap-3">
-    <span class="bg-indigo-500/10 border px-4 py-2 rounded-xl text-sm">Kotlin</span>
-    <span class="bg-indigo-500/10 border px-4 py-2 rounded-xl text-sm">Flutter</span>
-    <span class="bg-indigo-500/10 border px-4 py-2 rounded-xl text-sm">BLE</span>
-    <span class="bg-indigo-500/10 border px-4 py-2 rounded-xl text-sm">MVVM</span>
-  </div>
-</section>
-
-<footer class="py-10 text-center text-xs text-slate-600">
-  © 2026 Pooja Yadav
+<footer class="py-10 text-center text-xs text-slate-600 uppercase tracking-widest">
+    © 2026 Pooja Yadav | Android & Flutter Developer
 </footer>
 
 </body>
