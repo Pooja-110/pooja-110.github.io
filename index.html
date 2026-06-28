@@ -46,18 +46,19 @@
         }
     </style>
 </head>
-<body class="bg-[#020617] text-slate-200">
+<body class="bg-[#020617] text-slate-200 relative overflow-x-hidden">
 
-    <!-- Navbar -->
+    <!-- Navbar Header with exactly 2 Buttons: LinkedIn and Talk to AI -->
     <nav class="fixed w-full z-50 glass">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <span class="text-xl font-bold tracking-tighter text-gradient">POOJA.DEV</span>
-            <div class="space-x-8 hidden md:flex text-sm font-medium">
-                <a href="#home" class="hover:text-indigo-400 transition">Home</a>
-                <a href="#experience" class="hover:text-indigo-400 transition">Experience</a>
-                <a href="#projects" class="hover:text-indigo-400 transition">Apps</a>
-                <a href="#skills" class="hover:text-indigo-400 transition">Skills</a>
-                <a href="javascript:void(0)" onclick="openAIChat()" class="text-indigo-400 border border-indigo-400/30 px-4 py-1 rounded-full hover:bg-indigo-400/10 transition">Ask AI Resume</a>
+            <div class="space-x-4 flex items-center text-sm font-medium">
+                <a href="https://www.linkedin.com/in/pooja-yadav-134005296/" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-indigo-400 transition flex items-center gap-1.5 px-3 py-1 rounded-full hover:bg-white/5">
+                    <i class="fa-brands fa-linkedin text-lg"></i> <span class="hidden sm:inline">LinkedIn</span>
+                </a>
+                <button onclick="toggleAIChat()" class="text-indigo-400 border border-indigo-400/30 px-4 py-1.5 rounded-full bg-indigo-400/10 hover:bg-indigo-400/20 transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-robot"></i> Talk to AI
+                </button>
             </div>
         </div>
     </nav>
@@ -80,9 +81,8 @@
             
             <!-- Action Controls Group -->
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                
                 <!-- AI Chat Button Interface Trigger -->
-                <button onclick="openAIChat()" class="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 rounded-full font-bold transition flex items-center justify-center gap-2 shadow-xl shadow-indigo-500/20 group relative">
+                <button onclick="toggleAIChat()" class="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 rounded-full font-bold transition flex items-center justify-center gap-2 shadow-xl shadow-indigo-500/20 group relative">
                     <span class="absolute -top-1 -right-1 flex h-3 w-3">
                         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
                         <span class="relative inline-flex rounded-full h-3 w-3 bg-purple-500"></span>
@@ -94,14 +94,6 @@
                 <button onclick="downloadResume()" class="glass border-slate-700 text-slate-300 hover:text-white px-6 py-4 rounded-full font-medium transition flex items-center justify-center gap-2 hover:bg-white/5">
                     <i class="fa-solid fa-file-arrow-down text-slate-400"></i> Download PDF
                 </button>
-
-                <a href="https://www.linkedin.com/in/pooja-yadav-134005296/"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="glass border-indigo-500/50 text-white px-8 py-4 rounded-full font-bold transition flex items-center justify-center gap-2 hover:bg-white/5">
-                   <i class="fa-brands fa-linkedin text-indigo-400 text-xl"></i>
-                   View my LinkedIn
-                </a>
             </div>
         </div>
     </section>
@@ -115,7 +107,6 @@
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-
                 <!-- HP Sprocket -->
                 <a href="https://play.google.com/store/apps/details?id=com.hp.impulse.sprocket" target="_blank" class="glass p-6 rounded-[2rem] card-hover transition group relative">
                     <i class="fa-solid fa-arrow-up-right-from-square absolute top-6 right-6 text-xs text-slate-600 group-hover:text-indigo-400"></i>
@@ -195,7 +186,6 @@
                     <h3 class="font-bold text-lg group-hover:text-indigo-400 transition">HP Photo Booth</h3>
                     <p class="text-xs text-slate-500 mt-2">Enterprise solution for event-based photography.</p>
                 </a>
-
             </div>
         </div>
     </section>
@@ -276,36 +266,150 @@
         &copy; 2026 Pooja Yadav | Android & Flutter Developer
     </footer>
 
-    <!-- Core Local JavaScript Logic -->
+
+    <!-- NATIVE AI CHAT BOT SLIDE-OUT PANEL -->
+    <div id="aiChatDrawer" class="fixed inset-y-0 right-0 w-full sm:w-[460px] bg-slate-950/95 border-l border-white/10 z-50 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col shadow-2xl backdrop-blur-xl">
+        <!-- Header -->
+        <div class="p-5 border-b border-white/10 flex justify-between items-center bg-slate-900/40">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full border border-indigo-500/30 flex items-center justify-center bg-indigo-500/10">
+                    <i class="fa-solid fa-robot text-indigo-400"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm text-white">Pooja's AI Resume Assistant</h4>
+                    <p class="text-[10px] text-emerald-400 flex items-center gap-1">
+                        <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full inline-block animate-pulse"></span> Contextual Matching Mode
+                    </p>
+                </div>
+            </div>
+            <button onclick="toggleAIChat()" class="text-slate-400 hover:text-white transition p-2"><i class="fa-solid fa-xmark text-lg"></i></button>
+        </div>
+
+        <!-- Chat Container -->
+        <div id="chatMessages" class="flex-1 p-6 overflow-y-auto space-y-4 text-sm">
+            <!-- Initial Prompt -->
+            <div class="flex gap-3 max-w-[85%]">
+                <div class="w-8 h-8 rounded-full bg-indigo-600 flex items-center justify-center shrink-0 text-xs text-white"><i class="fa-solid fa-robot"></i></div>
+                <div class="bg-slate-900 border border-white/5 p-3.5 rounded-2xl rounded-tl-none text-slate-300 leading-relaxed">
+                    Hello! I am configured with Pooja Yadav's official profile datasets. Ask me about her technical skills, professional projects, live apps, or education history!
+                </div>
+            </div>
+        </div>
+
+        <!-- Suggestion Chips -->
+        <div class="px-6 py-2 flex flex-wrap gap-2 border-t border-white/5 bg-slate-900/10">
+            <button onclick="sendQuickPrompt('What apps do you manage on the Google Play Store?')" class="text-xs bg-white/5 hover:bg-indigo-500/20 border border-white/5 rounded-full px-3 py-1.5 text-slate-400 hover:text-indigo-300 transition">📱 Active Apps</button>
+            <button onclick="sendQuickPrompt('Tell me about your experience with Bluetooth / BLE protocols')" class="text-xs bg-white/5 hover:bg-indigo-500/20 border border-white/5 rounded-full px-3 py-1.5 text-slate-400 hover:text-indigo-300 transition">🔌 BLE Hardware</button>
+        </div>
+
+        <!-- Chat Bar Area -->
+        <div class="p-4 border-t border-white/10 bg-slate-900/40 flex gap-2">
+            <input type="text" id="chatInput" placeholder="Ask about Pooja's experience..." class="flex-1 bg-slate-900 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-indigo-500 text-white placeholder-slate-500">
+            <button onclick="handleUserMessage()" class="bg-indigo-600 hover:bg-indigo-700 text-white w-11 h-11 rounded-xl flex items-center justify-center transition shrink-0"><i class="fa-solid fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <!-- Core Local JavaScript Scripts -->
     <script>
         function downloadResume() {
              window.location.href = "Pooja_Yadav_Resume(1).pdf";
         }
 
-        // Global function to trigger the Low-Code AI Chat Window
-        function openAIChat() {
-            if (window.Chatbase && typeof window.Chatbase.openChat === 'function') {
-                window.Chatbase.openChat();
-            } else {
-                // If script hasn't loaded fully, alert or click the default widget icon fallback
-                const fallbackIcon = document.getElementById("chatbase-bubble-button");
-                if(fallbackIcon) fallbackIcon.click();
+        function toggleAIChat() {
+            const drawer = document.getElementById('aiChatDrawer');
+            drawer.classList.toggle('translate-x-full');
+        }
+
+        function sendQuickPrompt(text) {
+            document.getElementById('chatInput').value = text;
+            handleUserMessage();
+        }
+
+        // Hardcoded matching parameters representing Pooja's Profile Database
+        const allowedKeywords = [
+            'app', 'project', 'experience', 'work', 'job', 'company', 'c+a global', 'thinknext', 'intern', 'android', 'flutter', 'dart', 'kotlin', 'java', 'ble', 'bluetooth', 'hardware', 'kodak', 'hp', 'polaroid', 'sprocket', 'smile', 'classic', 'step touch', 'mint', 'zip', 'snaptouch', 'booth', 'mvvm', 'retrofit', 'room', 'database', 'ui', 'bca', 'university', 'college', 'education', 'degree', 'graduate', 'contact', 'mail', 'email', 'linkedin'
+        ];
+
+        const profileKnowledgeBase = {
+            apps: "Pooja has built and managed 8 flagship live apps on the Google Play Store integrating hardware and mobile ecosystems: HP Sprocket, Kodak Smile, Kodak Classic, Kodak Step Touch, Polaroid Mint, Polaroid ZIP, Polaroid Snaptouch, and HP Photo Booth.",
+            ble: "She is an expert in BLE (Bluetooth Low Energy) APIs, establishing low-latency connections with instant camera devices, managing ZINK photo-printing systems, and creating real-time telemetry logic.",
+            experience: "Pooja's professional journey includes:\n1. Flutter Developer at C+A Global India (Sep 2025 - Present): Architecting cross-platform initiatives.\n2. Android Developer at C+A Global India (Jan 2024 - Present): Directing core architecture lifecycles.\n3. Android Intern at ThinkNEXT Technologies (Jul 2023 - Dec 2023).",
+            skills: "Her specialized tech toolkit covers Kotlin, Flutter & Dart, BLE / Bluetooth API, MVVM Architecture, Retrofit, Java, and Room Database setups.",
+            education: "Pooja graduated in 2020 with a Bachelor of Computer Applications (BCA) degree from Guru Nanak Dev University."
+        };
+
+        function handleUserMessage() {
+            const input = document.getElementById('chatInput');
+            const queryText = input.value.trim();
+            if (!queryText) return;
+
+            const msgContainer = document.getElementById('chatMessages');
+            
+            // Append User Chat Bubble
+            msgContainer.innerHTML += `
+                <div class="flex gap-3 max-w-[85%] ml-auto justify-end">
+                    <div class="bg-indigo-600/20 text-indigo-200 p-3.5 rounded-2xl rounded-tr-none border border-indigo-500/20 leading-relaxed">
+                        ${queryText}
+                    </div>
+                </div>
+            `;
+            
+            input.value = '';
+            msgContainer.scrollTop = msgContainer.scrollHeight;
+
+            // Generate Match Evaluation Logic
+            const lowerQuery = queryText.toLowerCase();
+            let isApplicable = allowedKeywords.some(keyword => lowerQuery.includes(keyword));
+            let botReply = "Not Applicable";
+
+            if (isApplicable) {
+                if (lowerQuery.includes('app') || lowerQuery.includes('project') || lowerQuery.includes('kodak') || lowerQuery.includes('hp') || lowerQuery.includes('polaroid')) {
+                    botReply = profileKnowledgeBase.apps;
+                } else if (lowerQuery.includes('ble') || lowerQuery.includes('bluetooth') || lowerQuery.includes('hardware')) {
+                    botReply = profileKnowledgeBase.ble;
+                } else if (lowerQuery.includes('experience') || lowerQuery.includes('work') || lowerQuery.includes('job') || lowerQuery.includes('company') || lowerQuery.includes('journey')) {
+                    botReply = profileKnowledgeBase.experience;
+                } else if (lowerQuery.includes('skill') || lowerQuery.includes('toolkit') || lowerQuery.includes('kotlin') || lowerQuery.includes('flutter')) {
+                    botReply = profileKnowledgeBase.skills;
+                } else if (lowerQuery.includes('education') || lowerQuery.includes('degree') || lowerQuery.includes('university') || lowerQuery.includes('bca') || lowerQuery.includes('college')) {
+                    botReply = profileKnowledgeBase.education;
+                } else {
+                    botReply = `Pooja is a skilled Android & Flutter Developer experienced in building production hardware-connected applications with C+A Global India. Let me know if you need specific information regarding her live apps or BLE development timeline.`;
+                }
             }
-        }
-    </script>
 
-    <!-- LOW-CODE INTEGRATION STEP: 
-         1. Create a free account on https://www.chatbase.co (or voiceflow / dify).
-         2. Upload your Resume PDF or raw text information.
-         3. Copy your specific Chatbot ID and replace "YOUR_CHATBOT_ID_HERE" below.
-    -->
-    <script>
-        window.embeddedChatbotConfig = {
-            chatbotId: "YOUR_CHATBOT_ID_HERE",
-            domain: "www.chatbase.co"
-        }
-    </script>
-    <script src="https://www.chatbase.co/embed.min.js" chatbotId="YOUR_CHATBOT_ID_HERE" defer></script>
+            // Simulate typing UI state
+            const typeId = "typing_" + Date.now();
+            msgContainer.innerHTML += `
+                <div class="flex gap-3 max-w-[85%] items-center" id="${typeId}">
+                    <div class="w-8 h-8 rounded-full bg-indigo-600 flex items-center justify-center shrink-0 text-xs text-white"><i class="fa-solid fa-robot"></i></div>
+                    <div class="bg-slate-900 border border-white/5 p-3 rounded-2xl rounded-tl-none text-slate-500 text-xs tracking-wide">typing...</div>
+                </div>
+            `;
+            msgContainer.scrollTop = msgContainer.scrollHeight;
 
+            setTimeout(() => {
+                const typingBubble = document.getElementById(typeId);
+                if(typingBubble) typingBubble.remove();
+
+                msgContainer.innerHTML += `
+                    <div class="flex gap-3 max-w-[85%]">
+                        <div class="w-8 h-8 rounded-full bg-indigo-600 flex items-center justify-center shrink-0 text-xs text-white"><i class="fa-solid fa-robot"></i></div>
+                        <div class="bg-slate-900 border border-white/5 p-3.5 rounded-2xl rounded-tl-none text-slate-300 leading-relaxed whitespace-pre-line">
+                            ${botReply}
+                        </div>
+                    </div>
+                `;
+                msgContainer.scrollTop = msgContainer.scrollHeight;
+            }, 600);
+        }
+
+        // Capture enter keys cleanly
+        document.getElementById('chatInput').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                handleUserMessage();
+            }
+        });
+    </script>
 </body>
 </html>
