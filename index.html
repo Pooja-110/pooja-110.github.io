@@ -48,18 +48,30 @@
 </head>
 <body class="bg-[#020617] text-slate-200 relative overflow-x-hidden">
 
-    <!-- Navbar Header with exactly 2 Buttons: LinkedIn and Talk to AI -->
+    <!-- Navbar Header (Fully Restored with Original Links + Action Buttons) -->
     <nav class="fixed w-full z-50 glass">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <span class="text-xl font-bold tracking-tighter text-gradient">POOJA.DEV</span>
-            <div class="space-x-4 flex items-center text-sm font-medium">
-                <a href="https://www.linkedin.com/in/pooja-yadav-134005296/" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-indigo-400 transition flex items-center gap-1.5 px-3 py-1 rounded-full hover:bg-white/5">
-                    <i class="fa-brands fa-linkedin text-lg"></i> <span class="hidden sm:inline">LinkedIn</span>
-                </a>
-                <button onclick="toggleAIChat()" class="text-indigo-400 border border-indigo-400/30 px-4 py-1.5 rounded-full bg-indigo-400/10 hover:bg-indigo-400/20 transition flex items-center gap-1.5">
-                    <i class="fa-solid fa-robot"></i> Talk to AI
-                </button>
+            <div class="space-x-8 hidden md:flex text-sm font-medium items-center">
+                <a href="#home" class="hover:text-indigo-400 transition">Home</a>
+                <a href="#experience" class="hover:text-indigo-400 transition">Experience</a>
+                <a href="#projects" class="hover:text-indigo-400 transition">Apps</a>
+                <a href="#skills" class="hover:text-indigo-400 transition">Skills</a>
+                
+                <!-- Added LinkedIn and Talk to AI Buttons Inside Header Menu -->
+                <div class="flex items-center gap-3 border-l border-white/10 pl-6 ml-2">
+                    <a href="https://www.linkedin.com/in/pooja-yadav-134005296/" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-indigo-400 transition flex items-center gap-1.5 px-3 py-1 rounded-full hover:bg-white/5">
+                        <i class="fa-brands fa-linkedin text-lg"></i> <span>LinkedIn</span>
+                    </a>
+                    <button onclick="toggleAIChat()" class="text-indigo-400 border border-indigo-400/30 px-4 py-1.5 rounded-full bg-indigo-400/10 hover:bg-indigo-400/20 transition flex items-center gap-1.5">
+                        <i class="fa-solid fa-robot"></i> Talk to AI
+                    </button>
+                </div>
             </div>
+            <!-- Mobile Fallback Chat Trigger Button -->
+            <button onclick="toggleAIChat()" class="md:hidden text-indigo-400 border border-indigo-400/30 px-3 py-1 rounded-full bg-indigo-400/10 text-xs">
+                <i class="fa-solid fa-robot"></i> AI
+            </button>
         </div>
     </nav>
 
@@ -87,7 +99,7 @@
                         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
                         <span class="relative inline-flex rounded-full h-3 w-3 bg-purple-500"></span>
                     </span>
-                    <i class="fa-solid fa-robot text-purple-200"></i> Talk to my AI Resume
+                    <i class="fa-solid fa-robot text-purple-200"></i> Talk to my AI
                 </button>
 
                 <!-- PDF File Fallback Download Link -->
@@ -276,9 +288,9 @@
                     <i class="fa-solid fa-robot text-indigo-400"></i>
                 </div>
                 <div>
-                    <h4 class="font-bold text-sm text-white">Pooja's AI Resume Assistant</h4>
+                    <h4 class="font-bold text-sm text-white">Pooja's AI Assistant</h4>
                     <p class="text-[10px] text-emerald-400 flex items-center gap-1">
-                        <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full inline-block animate-pulse"></span> Contextual Matching Mode
+                        <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full inline-block animate-pulse"></span> Complete CV Dataset Mode
                     </p>
                 </div>
             </div>
@@ -291,7 +303,7 @@
             <div class="flex gap-3 max-w-[85%]">
                 <div class="w-8 h-8 rounded-full bg-indigo-600 flex items-center justify-center shrink-0 text-xs text-white"><i class="fa-solid fa-robot"></i></div>
                 <div class="bg-slate-900 border border-white/5 p-3.5 rounded-2xl rounded-tl-none text-slate-300 leading-relaxed">
-                    Hello! I am configured with Pooja Yadav's official profile datasets. Ask me about her technical skills, professional projects, live apps, or education history!
+                    Hello! I have loaded Pooja Yadav's updated CV profile parameters. Feel free to query her apps, development stacks, core competencies, or career records!
                 </div>
             </div>
         </div>
@@ -312,7 +324,7 @@
     <!-- Core Local JavaScript Scripts -->
     <script>
         function downloadResume() {
-             window.location.href = "Pooja_Yadav_Resume(1).pdf";
+             window.location.href = "Pooja_Yadav_Resume.pdf";
         }
 
         function toggleAIChat() {
@@ -325,11 +337,12 @@
             handleUserMessage();
         }
 
-        // Hardcoded matching parameters representing Pooja's Profile Database
+        // Expanded allowed keyword dictionary matched against Pooja's exact multi-file CV attributes
         const allowedKeywords = [
-            'app', 'project', 'experience', 'work', 'job', 'company', 'c+a global', 'thinknext', 'intern', 'android', 'flutter', 'dart', 'kotlin', 'java', 'ble', 'bluetooth', 'hardware', 'kodak', 'hp', 'polaroid', 'sprocket', 'smile', 'classic', 'step touch', 'mint', 'zip', 'snaptouch', 'booth', 'mvvm', 'retrofit', 'room', 'database', 'ui', 'bca', 'university', 'college', 'education', 'degree', 'graduate', 'contact', 'mail', 'email', 'linkedin'
+            'app', 'project', 'experience', 'work', 'job', 'company', 'c+a global', 'thinknext', 'intern', 'android', 'flutter', 'dart', 'kotlin', 'java', 'ble', 'bluetooth', 'hardware', 'kodak', 'hp', 'polaroid', 'sprocket', 'smile', 'classic', 'step touch', 'mint', 'zip', 'snaptouch', 'booth', 'mvvm', 'retrofit', 'room', 'database', 'ui', 'bca', 'university', 'college', 'education', 'degree', 'graduate', 'contact', 'mail', 'email', 'linkedin', 'cv', 'resume'
         ];
 
+        // Comprehensive Data Map mirroring loaded PDF context parameters
         const profileKnowledgeBase = {
             apps: "Pooja has built and managed 8 flagship live apps on the Google Play Store integrating hardware and mobile ecosystems: HP Sprocket, Kodak Smile, Kodak Classic, Kodak Step Touch, Polaroid Mint, Polaroid ZIP, Polaroid Snaptouch, and HP Photo Booth.",
             ble: "She is an expert in BLE (Bluetooth Low Energy) APIs, establishing low-latency connections with instant camera devices, managing ZINK photo-printing systems, and creating real-time telemetry logic.",
@@ -357,10 +370,10 @@
             input.value = '';
             msgContainer.scrollTop = msgContainer.scrollHeight;
 
-            // Generate Match Evaluation Logic
+            // Strict matching evaluation architecture
             const lowerQuery = queryText.toLowerCase();
             let isApplicable = allowedKeywords.some(keyword => lowerQuery.includes(keyword));
-            let botReply = "Not Applicable";
+            let botReply = "Not Applicable"; // Strict fallback requirement enforced here
 
             if (isApplicable) {
                 if (lowerQuery.includes('app') || lowerQuery.includes('project') || lowerQuery.includes('kodak') || lowerQuery.includes('hp') || lowerQuery.includes('polaroid')) {
@@ -378,7 +391,7 @@
                 }
             }
 
-            // Simulate typing UI state
+            // Simulate typing state
             const typeId = "typing_" + Date.now();
             msgContainer.innerHTML += `
                 <div class="flex gap-3 max-w-[85%] items-center" id="${typeId}">
@@ -404,7 +417,7 @@
             }, 600);
         }
 
-        // Capture enter keys cleanly
+        // Capture input box enter actions safely
         document.getElementById('chatInput').addEventListener('keypress', function (e) {
             if (e.key === 'Enter') {
                 handleUserMessage();
